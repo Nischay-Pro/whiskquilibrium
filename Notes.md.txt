@@ -2,3 +2,6 @@
 > For character that needs precision control, use Kinematic body
 > Use  https://www169.lunapic.com/editor/ -> Upload/Browse -> Edit -> Transparent Backgroud to clean images into sprites
 > Use lock feature, in the list of camera option tab above our scen to make sure child nodes dont move
+> The script button is at the right of the filter node option
+> Search help tab is used for the code help
+> move_and_slide() 's argument floor_normal decides whether a game is top-down or platformer

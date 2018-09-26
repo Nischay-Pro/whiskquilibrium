@@ -2,12 +2,12 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/firstcat_blackwhite.png-269df4ece87f08c7a73e3c5e3a2e06be.stex"
+path="res://.import/firstcat_blackwhite_extended_final.png-45746d0e217f4849d2371a845f0956ad.stex"
 
 [deps]
 
-source_file="res://firstcat_blackwhite.png"
-dest_files=[ "res://.import/firstcat_blackwhite.png-269df4ece87f08c7a73e3c5e3a2e06be.stex" ]
+source_file="res://images/firstcat_blackwhite_extended_final.png"
+dest_files=[ "res://.import/firstcat_blackwhite_extended_final.png-45746d0e217f4849d2371a845f0956ad.stex" ]
 
 [params]
 
