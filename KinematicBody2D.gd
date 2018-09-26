@@ -1,13 +1,18 @@
 extends KinematicBody2D
 
+onready var sprite = get_node("cat")
+
 # class member variables go here, for example:
 # var a = 2
 # var b = "textvar"
 
 const UP = Vector2(0, -1) # PTSD from normal direction in project
 const GRAVITY  = 20
-const MOV_MOTION = 100
+const MOV_MOTION = 300
 const JUMP_HEIGHT = -400
+
+
+var anim = "idle"
 
 var motion = Vector2()
 
@@ -29,13 +34,19 @@ func _physics_process(delta):
 		# print("On floor") # For debugging
 		if Input.is_action_just_pressed("ui_up"):
 			motion.y = JUMP_HEIGHT;
+		elif Input.is_key_pressed(32):
+			motion.y = JUMP_HEIGHT
 	
 	motion = move_and_slide(motion, UP) # Up is up
+	if motion.x == 0:
+		anim = "idle"
+	else:
+		anim = "run"
+	if motion.x < 0:
+		sprite.set_flip_h(false)
+	elif motion.x > 0:
+		sprite.set_flip_h(true)
+	sprite.play(anim)
 	pass
-
-# func _ready():
-	# Called when the node is added to the scene for the first time.
-	# Initialization here
-	# pass
 
 

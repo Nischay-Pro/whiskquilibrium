@@ -1,8 +1,28 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://KinematicBody2D.gd" type="Script" id=1]
-[ext_resource path="res://images/firstcat_blackwhite_extended_final.png" type="Texture" id=2]
-[ext_resource path="res://images/icon.png" type="Texture" id=3]
+[ext_resource path="res://images/cat/stand/1.png" type="Texture" id=2]
+[ext_resource path="res://images/cat/run/1.png" type="Texture" id=3]
+[ext_resource path="res://images/cat/run/2.png" type="Texture" id=4]
+[ext_resource path="res://images/cat/run/3.png" type="Texture" id=5]
+[ext_resource path="res://images/cat/run/4.png" type="Texture" id=6]
+[ext_resource path="res://images/cat/run/5.png" type="Texture" id=7]
+[ext_resource path="res://images/cat/run/6.png" type="Texture" id=8]
+[ext_resource path="res://images/icon.png" type="Texture" id=9]
+
+[sub_resource type="SpriteFrames" id=3]
+
+animations = [ {
+"frames": [ ExtResource( 2 ) ],
+"loop": true,
+"name": "idle",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 3 ), ExtResource( 4 ), ExtResource( 5 ), ExtResource( 6 ), ExtResource( 7 ), ExtResource( 8 ) ],
+"loop": true,
+"name": "run",
+"speed": 8.0
+} ]
 
 [sub_resource type="RectangleShape2D" id=1]
 
@@ -18,31 +38,55 @@ extents = Vector2( 32, 32 )
 
 [node name="KinematicBody2D" type="KinematicBody2D" parent="." index="0"]
 
-position = Vector2( 160, 96 )
+position = Vector2( 160, 95 )
 input_pickable = false
 collision_layer = 1
 collision_mask = 1
 collision/safe_margin = 0.08
 script = ExtResource( 1 )
-_sections_unfolded = [ "Collision" ]
 __meta__ = {
 "_edit_group_": true
 }
 
-[node name="Sprite" type="Sprite" parent="KinematicBody2D" index="0"]
+[node name="cat" type="AnimatedSprite" parent="KinematicBody2D" index="0"]
 
-scale = Vector2( 0.085, 0.085 )
-texture = ExtResource( 2 )
+frames = SubResource( 3 )
+animation = "run"
+frame = 4
+playing = true
+flip_h = true
 _sections_unfolded = [ "Transform" ]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="KinematicBody2D" index="1"]
 
-scale = Vector2( 1, 1 )
 shape = SubResource( 1 )
 
-[node name="Walls" type="Node" parent="." index="1"]
+[node name="Camera2D" type="Camera2D" parent="KinematicBody2D" index="2"]
 
-editor/display_folded = true
+anchor_mode = 1
+rotating = false
+current = true
+zoom = Vector2( 1, 1 )
+limit_left = -10000000
+limit_top = -10000000
+limit_right = 10000000
+limit_bottom = 10000000
+limit_smoothed = false
+drag_margin_h_enabled = true
+drag_margin_v_enabled = true
+smoothing_enabled = false
+smoothing_speed = 5.0
+offset_v = 0.0
+offset_h = 0.0
+drag_margin_left = 0.2
+drag_margin_top = 0.2
+drag_margin_right = 0.2
+drag_margin_bottom = 0.2
+editor_draw_screen = true
+editor_draw_limits = false
+editor_draw_drag_margin = false
+
+[node name="Walls" type="Node" parent="." index="1"]
 
 [node name="Wall" type="StaticBody2D" parent="Walls" index="0"]
 
@@ -62,7 +106,7 @@ __meta__ = {
 [node name="Sprite" type="Sprite" parent="Walls/Wall" index="0"]
 
 modulate = Color( 0, 0, 0, 1 )
-texture = ExtResource( 3 )
+texture = ExtResource( 9 )
 _sections_unfolded = [ "Transform", "Visibility" ]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/Wall" index="1"]
@@ -87,7 +131,7 @@ __meta__ = {
 [node name="Sprite" type="Sprite" parent="Walls/Wall2" index="0"]
 
 modulate = Color( 0, 0, 0, 1 )
-texture = ExtResource( 3 )
+texture = ExtResource( 9 )
 _sections_unfolded = [ "Transform", "Visibility" ]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/Wall2" index="1"]
@@ -112,7 +156,7 @@ __meta__ = {
 [node name="Sprite" type="Sprite" parent="Walls/Wall3" index="0"]
 
 modulate = Color( 0, 0, 0, 1 )
-texture = ExtResource( 3 )
+texture = ExtResource( 9 )
 _sections_unfolded = [ "Transform", "Visibility" ]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/Wall3" index="1"]
@@ -137,7 +181,7 @@ __meta__ = {
 [node name="Sprite" type="Sprite" parent="Walls/Wall4" index="0"]
 
 modulate = Color( 0, 0, 0, 1 )
-texture = ExtResource( 3 )
+texture = ExtResource( 9 )
 _sections_unfolded = [ "Transform", "Visibility" ]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/Wall4" index="1"]
@@ -162,7 +206,7 @@ __meta__ = {
 [node name="Sprite" type="Sprite" parent="Walls/Wall5" index="0"]
 
 modulate = Color( 0, 0, 0, 1 )
-texture = ExtResource( 3 )
+texture = ExtResource( 9 )
 _sections_unfolded = [ "Transform", "Visibility" ]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/Wall5" index="1"]
@@ -187,7 +231,7 @@ __meta__ = {
 [node name="Sprite" type="Sprite" parent="Walls/Wall7" index="0"]
 
 modulate = Color( 0, 0, 0, 1 )
-texture = ExtResource( 3 )
+texture = ExtResource( 9 )
 _sections_unfolded = [ "Transform", "Visibility" ]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/Wall7" index="1"]
@@ -212,7 +256,7 @@ __meta__ = {
 [node name="Sprite" type="Sprite" parent="Walls/Wall8" index="0"]
 
 modulate = Color( 0, 0, 0, 1 )
-texture = ExtResource( 3 )
+texture = ExtResource( 9 )
 _sections_unfolded = [ "Transform", "Visibility" ]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/Wall8" index="1"]
@@ -237,7 +281,7 @@ __meta__ = {
 [node name="Sprite" type="Sprite" parent="Walls/Wall9" index="0"]
 
 modulate = Color( 0, 0, 0, 1 )
-texture = ExtResource( 3 )
+texture = ExtResource( 9 )
 _sections_unfolded = [ "Transform", "Visibility" ]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/Wall9" index="1"]
@@ -262,7 +306,7 @@ __meta__ = {
 [node name="Sprite" type="Sprite" parent="Walls/Wall10" index="0"]
 
 modulate = Color( 0, 0, 0, 1 )
-texture = ExtResource( 3 )
+texture = ExtResource( 9 )
 _sections_unfolded = [ "Transform", "Visibility" ]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/Wall10" index="1"]
@@ -287,7 +331,7 @@ __meta__ = {
 [node name="Sprite" type="Sprite" parent="Walls/Wall11" index="0"]
 
 modulate = Color( 0, 0, 0, 1 )
-texture = ExtResource( 3 )
+texture = ExtResource( 9 )
 _sections_unfolded = [ "Transform", "Visibility" ]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/Wall11" index="1"]
