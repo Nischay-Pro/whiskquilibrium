@@ -1,0 +1,4 @@
+> Everything can be taugh of as nodes
+> For character that needs precision control, use Kinematic body
+> Use  https://www169.lunapic.com/editor/ -> Upload/Browse -> Edit -> Transparent Backgroud to clean images into sprites
+> Use lock feature, in the list of camera option tab above our scen to make sure child nodes dont move
