@@ -31,8 +31,9 @@ var motion = Vector2()
 func _ready():
 	active_cat_sprite.show()
 	inactive_cat_sprite.hide()
+	_on_Cat_switchCat(true)
 
-func horizontal_physics(delta):
+func horizontal_physics():
 	if right_pressed:
 		motion.x = MOV_MOTION
 	elif left_pressed:
@@ -48,21 +49,23 @@ func horizontal_physics(delta):
 	elif motion.x > 0 and scale != Vector2(1, 1):
 		apply_scale(Vector2(-1, 1))
 
-func black_cat_physics(delta):
+func black_cat_physics():
 	if is_on_floor():
 		if jump_pressed:
 			motion.y = JUMP_HEIGHT
 	motion.y += GRAVITY
 
-func white_cat_physics(delta):
+func white_cat_physics():
 	if float_triggered and float_count > 0:
 		motion.y = 0
 	else:
 		motion.y += GRAVITY
+		
+func cat_speak(text):
+	get_node("./Speak").say(text)
 
 func toggle_cat_state():
 	if switch_count != 0:
-		switch_count -= 1
 		# Toggle cat_state
 		if cat_state == WHITE_CAT:
 			cat_state = BLACK_CAT
@@ -76,6 +79,8 @@ func toggle_cat_state():
 		active_cat_sprite.show()
 		inactive_cat_sprite.hide()
 		emit_signal("switchCat")
+	else:
+		cat_speak("I can't switch bitch!")
 
 func toggle_float():
 	float_triggered = not float_triggered
@@ -91,7 +96,7 @@ func check_inputs():
 	if Input.is_action_just_pressed("trigger_float") and cat_state == WHITE_CAT:
 		toggle_float()
 
-func play_animation():	
+func play_animation():
 	active_cat_sprite.play(anim)
 	inactive_cat_sprite.play(anim)
 
@@ -99,11 +104,13 @@ func _physics_process(delta):
 	check_inputs()
 	play_animation()
 	if cat_state == BLACK_CAT:
-		black_cat_physics(delta)
+		black_cat_physics()
 	elif cat_state == WHITE_CAT:
-		white_cat_physics(delta)
-	horizontal_physics(delta)
+		white_cat_physics()
+	horizontal_physics()
 	motion = move_and_slide(motion, UP)
 
-func _on_Cat_switchCat():
+func _on_Cat_switchCat(default = false):
+	if default == false:
+		switch_count -= 1
 	get_node("/root/Main/Level0/CanvasLayer/GUI/MainBar/TransformBar/Background/TransformCount").adjust(switch_count, cat_state)
