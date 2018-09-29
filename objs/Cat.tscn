@@ -45,7 +45,7 @@ animations = [ {
 } ]
 _sections_unfolded = [ "Resource" ]
 
-[node name="Cat" type="KinematicBody2D"]
+[node name="Cat" type="KinematicBody2D" index="0"]
 
 input_pickable = false
 collision_layer = 1
@@ -67,7 +67,6 @@ _sections_unfolded = [ "Transform", "Visibility" ]
 visible = false
 frames = SubResource( 2 )
 animation = "run"
-frame = 4
 playing = true
 flip_h = true
 _sections_unfolded = [ "Visibility" ]
