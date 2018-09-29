@@ -76,7 +76,10 @@ __meta__ = {
 
 frames = SubResource( 1 )
 animation = "run"
+<<<<<<< HEAD
 frame = 2
+=======
+>>>>>>> 55532d0d594769c2625dc942cf62ac041cebeca8
 playing = true
 flip_h = true
 _sections_unfolded = [ "Transform", "Visibility" ]
@@ -86,7 +89,11 @@ _sections_unfolded = [ "Transform", "Visibility" ]
 visible = false
 frames = SubResource( 2 )
 animation = "run"
+<<<<<<< HEAD
 frame = 4
+=======
+frame = 2
+>>>>>>> 55532d0d594769c2625dc942cf62ac041cebeca8
 playing = true
 flip_h = true
 _sections_unfolded = [ "Visibility" ]
