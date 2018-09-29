@@ -3,7 +3,7 @@
 [ext_resource path="res://levels/level0.gd" type="Script" id=1]
 [ext_resource path="res://Tiles.tres" type="TileSet" id=2]
 
-[node name="World" type="Node"]
+[node name="Level0" type="Node" index="0"]
 
 script = ExtResource( 1 )
 

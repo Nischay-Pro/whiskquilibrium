@@ -4,7 +4,8 @@ const cat_scene = preload("res://objs/Cat.tscn")
 var cat = cat_scene.instance()
 
 func init_cat():
-	get_tree().get_root().add_child(cat)
+	print(get_parent().get_name())
+	get_parent().add_child(cat)
 	#cat
 
 func _ready():
