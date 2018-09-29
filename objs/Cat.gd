@@ -31,7 +31,9 @@ var motion = Vector2()
 func _ready():
 	active_cat_sprite.show()
 	inactive_cat_sprite.hide()
+	_on_Cat_switchCat(true)
 	print(active_cat_sprite.get_name())
+	
 
 func horizontal_physics(delta):
 	if right_pressed:
@@ -60,6 +62,9 @@ func white_cat_physics(delta):
 		motion.y = 0
 	else:
 		motion.y += GRAVITY
+		
+func cat_speak(text):
+	get_node("./Speak").say(text)
 
 func toggle_cat_state():
 	# Toggle cat_state
@@ -75,6 +80,8 @@ func toggle_cat_state():
 		active_cat_sprite.show()
 		inactive_cat_sprite.hide()
 		emit_signal("switchCat")
+	else:
+		cat_speak("I can't switch bitch!")
 
 func toggle_float():
 	float_triggered = not float_triggered
@@ -104,6 +111,7 @@ func _physics_process(delta):
 	horizontal_physics(delta)
 	motion = move_and_slide(motion, UP)
 
-func _on_Cat_switchCat():
-	switch_count -= 1
+func _on_Cat_switchCat(default = false):
+	if !default:
+		switch_count -= 1
 	get_node("/root/Main/Level0/CanvasLayer/GUI/MainBar/TransformBar/Background/TransformCount").adjust(switch_count, cat_state)

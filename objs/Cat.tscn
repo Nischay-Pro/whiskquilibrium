@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=2]
+[gd_scene load_steps=22 format=2]
 
 [ext_resource path="res://objs/Cat.gd" type="Script" id=1]
 [ext_resource path="res://images/cat/stand/sprite_0.png" type="Texture" id=2]
@@ -15,6 +15,10 @@
 [ext_resource path="res://images/cat/run/black/sprite_3.png" type="Texture" id=13]
 [ext_resource path="res://images/cat/run/black/sprite_4.png" type="Texture" id=14]
 [ext_resource path="res://images/cat/run/black/sprite_5.png" type="Texture" id=15]
+[ext_resource path="res://addons/balloon/balloon.gd" type="Script" id=16]
+[ext_resource path="res://addons/balloon/assets/icon_balloon.png" type="Texture" id=17]
+[ext_resource path="res://addons/balloon/assets/OpenComicFont.tres" type="DynamicFont" id=18]
+[ext_resource path="res://addons/balloon/assets/balloon.theme" type="Theme" id=19]
 
 [sub_resource type="SpriteFrames" id=1]
 
@@ -67,7 +71,7 @@ _sections_unfolded = [ "Transform", "Visibility" ]
 visible = false
 frames = SubResource( 2 )
 animation = "run"
-frame = 3
+frame = 1
 playing = true
 flip_h = true
 _sections_unfolded = [ "Visibility" ]
@@ -102,6 +106,49 @@ editor_draw_drag_margin = false
 build_mode = 0
 polygon = PoolVector2Array( -22.11, 29.7722, 18.0848, 29.7722, 18.0848, 10.4075, 34.0999, -10.2133, 33.9953, -18.3778, 21.8531, -29.9966, 13.5838, -29.9966, 4.88741, -6.85978, -22.0859, -6.83405, -22.0906, 2.2238 )
 _sections_unfolded = [ "Transform" ]
+
+[node name="Speak" type="Control" parent="." index="4"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = -128.0
+margin_top = -128.0
+margin_right = 128.0
+margin_bottom = 128.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+script = ExtResource( 16 )
+_sections_unfolded = [ "Visibility" ]
+__meta__ = {
+"_editor_icon": ExtResource( 17 )
+}
+text = ""
+ratio = 1.0
+font_height_adjust = 0
+padding = 8
+shadown_width = 4
+text_color = Color( 0, 0, 0, 1 )
+color = Color( 1, 1, 1, 1 )
+color_center = Color( 1, 1, 1, 1 )
+color_shadow = Color( 0, 0, 0, 1 )
+arrow_width = 0.25
+normal_font = ExtResource( 18 )
+lock_target = NodePath("../whitecat_sprite")
+words_per_minute = 100
+typewriter = true
+auto_hide = true
+bubble_effect = true
+balloon_material = null
+text_material = null
+script_path = null
+ui_theme = ExtResource( 19 )
+show_debug_messages = false
 
 [connection signal="switchCat" from="." to="." method="_on_Cat_switchCat"]
 

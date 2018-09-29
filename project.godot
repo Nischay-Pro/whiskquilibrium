@@ -16,7 +16,7 @@ config/icon="res://icon.png"
 
 [editor_plugins]
 
-enabled=PoolStringArray( "tile_spawner" )
+enabled=PoolStringArray( "balloon", "tile_spawner" )
 
 [input]
 
