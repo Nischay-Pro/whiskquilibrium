@@ -61,8 +61,9 @@ func white_cat_physics(delta):
 		motion.y += GRAVITY
 
 func toggle_cat_state():
-	# Toggle cat_state
 	if switch_count != 0:
+		switch_count -= 1
+		# Toggle cat_state
 		if cat_state == WHITE_CAT:
 			cat_state = BLACK_CAT
 		elif cat_state == BLACK_CAT:
@@ -71,6 +72,7 @@ func toggle_cat_state():
 		var temp_sprite = active_cat_sprite
 		active_cat_sprite = inactive_cat_sprite
 		inactive_cat_sprite = temp_sprite
+		# Switch visibility of sprites
 		active_cat_sprite.show()
 		inactive_cat_sprite.hide()
 		emit_signal("switchCat")
@@ -104,5 +106,4 @@ func _physics_process(delta):
 	motion = move_and_slide(motion, UP)
 
 func _on_Cat_switchCat():
-	switch_count -= 1
 	get_node("/root/Main/Level0/CanvasLayer/GUI/MainBar/TransformBar/Background/TransformCount").adjust(switch_count, cat_state)

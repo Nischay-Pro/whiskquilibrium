@@ -88,23 +88,39 @@ position = Vector2( 864, 448 )
 
 position = Vector2( 160, 512 )
 
-[node name="Root13" parent="TileSpawner" index="14" instance=ExtResource( 6 )]
+[node name="Root18" parent="TileSpawner" index="14" instance=ExtResource( 6 )]
+
+position = Vector2( 224, 384 )
+
+[node name="Root19" parent="TileSpawner" index="15" instance=ExtResource( 6 )]
+
+position = Vector2( 288, 384 )
+
+[node name="Root20" parent="TileSpawner" index="16" instance=ExtResource( 6 )]
+
+position = Vector2( 352, 384 )
+
+[node name="Root21" parent="TileSpawner" index="17" instance=ExtResource( 6 )]
+
+position = Vector2( 160, 384 )
+
+[node name="Root13" parent="TileSpawner" index="18" instance=ExtResource( 6 )]
 
 position = Vector2( 224, 512 )
 
-[node name="Root14" parent="TileSpawner" index="15" instance=ExtResource( 6 )]
+[node name="Root14" parent="TileSpawner" index="19" instance=ExtResource( 6 )]
 
 position = Vector2( 288, 512 )
 
-[node name="Root15" parent="TileSpawner" index="16" instance=ExtResource( 6 )]
+[node name="Root15" parent="TileSpawner" index="20" instance=ExtResource( 6 )]
 
 position = Vector2( 352, 512 )
 
-[node name="Root16" parent="TileSpawner" index="17" instance=ExtResource( 6 )]
+[node name="Root16" parent="TileSpawner" index="21" instance=ExtResource( 6 )]
 
 position = Vector2( 416, 512 )
 
-[node name="Root17" parent="TileSpawner" index="18" instance=ExtResource( 6 )]
+[node name="Root17" parent="TileSpawner" index="22" instance=ExtResource( 6 )]
 
 position = Vector2( 480, 512 )
 
