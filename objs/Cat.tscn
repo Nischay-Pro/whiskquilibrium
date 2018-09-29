@@ -16,8 +16,6 @@
 [ext_resource path="res://images/cat/run/black/sprite_4.png" type="Texture" id=14]
 [ext_resource path="res://images/cat/run/black/sprite_5.png" type="Texture" id=15]
 
-
-
 [sub_resource type="SpriteFrames" id=1]
 
 animations = [ {
@@ -52,9 +50,8 @@ _sections_unfolded = [ "Resource" ]
 custom_solver_bias = 0.0
 extents = Vector2( 32, 32 )
 
-[node name="Cat" type="KinematicBody2D"]
+[node name="Cat" type="KinematicBody2D" index="0"]
 
-position = Vector2( 160, 128 )
 input_pickable = false
 collision_layer = 1
 collision_mask = 1
@@ -69,7 +66,7 @@ __meta__ = {
 
 frames = SubResource( 1 )
 animation = "run"
-frame = 5
+frame = 2
 playing = true
 flip_h = true
 _sections_unfolded = [ "Transform", "Visibility" ]
@@ -79,7 +76,7 @@ _sections_unfolded = [ "Transform", "Visibility" ]
 visible = false
 frames = SubResource( 2 )
 animation = "run"
-frame = 1
+frame = 4
 playing = true
 flip_h = true
 _sections_unfolded = [ "Visibility" ]

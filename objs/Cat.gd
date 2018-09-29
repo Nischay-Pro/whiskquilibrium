@@ -6,7 +6,7 @@ onready var inactive_cat_sprite = get_node("blackcat_sprite")
 const UP = Vector2(0, -1) # PTSD from normal direction in project
 const GRAVITY  = 20
 const MOV_MOTION = 300
-const JUMP_HEIGHT = -400
+const JUMP_HEIGHT = -500
 const BLACK_CAT = 0
 const WHITE_CAT = 1
 
@@ -15,11 +15,7 @@ var anim = "idle"
 
 var motion = Vector2()
 
-func basic_physics(delta):
-	if get_node(".").position.y > get_viewport_rect().end.y:
-	# Replace with a "reset-to-checkpoint" action later
-		queue_free()
-	
+func basic_physics(delta):	
 	if(cat_status == BLACK_CAT):
 		active_cat_sprite = get_node("blackcat_sprite")
 		inactive_cat_sprite = get_node("whitecat_sprite")
