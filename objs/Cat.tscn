@@ -1,114 +1,30 @@
 [gd_scene load_steps=18 format=2]
 
-[ext_resource path="res://images/cat/stand/sprite_0.png" type="Texture" id=1]
-[ext_resource path="res://images/cat/run/1.png" type="Texture" id=2]
-[ext_resource path="res://images/cat/run/2.png" type="Texture" id=3]
-[ext_resource path="res://images/cat/run/3.png" type="Texture" id=4]
-[ext_resource path="res://images/cat/run/4.png" type="Texture" id=5]
-[ext_resource path="res://images/cat/run/5.png" type="Texture" id=6]
-[ext_resource path="res://images/cat/run/6.png" type="Texture" id=7]
-[ext_resource path="res://images/cat/stand/sprite_1.png" type="Texture" id=8]
-[ext_resource path="res://images/cat/run/black/sprite_0.png" type="Texture" id=9]
-[ext_resource path="res://images/cat/run/black/sprite_1.png" type="Texture" id=10]
-[ext_resource path="res://images/cat/run/black/sprite_2.png" type="Texture" id=11]
-[ext_resource path="res://images/cat/run/black/sprite_3.png" type="Texture" id=12]
-[ext_resource path="res://images/cat/run/black/sprite_4.png" type="Texture" id=13]
-[ext_resource path="res://images/cat/run/black/sprite_5.png" type="Texture" id=14]
-
-[sub_resource type="GDScript" id=3]
-
-script/source = "extends KinematicBody2D
-
-onready var active_cat_sprite = get_node(\"whitecat_sprite\")
-onready var inactive_cat_sprite = get_node(\"blackcat_sprite\")
-
-const UP = Vector2(0, -1)
-const GRAVITY  = 20
-const MOV_MOTION = 500
-const JUMP_HEIGHT = -500
-const BLACK_CAT = 0
-const WHITE_CAT = 1
-
-
-var cat_status = BLACK_CAT
-var anim = \"idle\"
-
-var float_count = 20
-signal switchCat
-
-var motion = Vector2()
-
-func basic_physics(delta):	
-	if cat_status == BLACK_CAT:
-		active_cat_sprite = get_node(\"blackcat_sprite\")
-		inactive_cat_sprite = get_node(\"whitecat_sprite\")
-	elif cat_status == WHITE_CAT:
-		active_cat_sprite = get_node(\"whitecat_sprite\")
-		inactive_cat_sprite = get_node(\"blackcat_sprite\")
-	inactive_cat_sprite.hide()
-	active_cat_sprite.show()
-	
-	if Input.is_action_pressed(\"ui_right\"):
-		motion.x = MOV_MOTION
-	elif Input.is_action_pressed(\"ui_left\"):
-		motion.x = -MOV_MOTION
-	else:
-		motion.x = 0
-	
-	if Input.is_action_just_pressed(\"cat_state_switch\"):
-		if float_count != 0:
-			if cat_status == WHITE_CAT:
-				cat_status = BLACK_CAT
-			elif cat_status == BLACK_CAT:
-				cat_status = WHITE_CAT
-			emit_signal(\"switchCat\",float_count,cat_status)
-		else:
-			print(\"Nope\")
-			
-	motion = move_and_slide(motion, UP) # Up is up
-	if motion.x == 0:
-		anim = \"idle\"
-	else:
-		anim = \"run\"
-	if motion.x < 0 and scale == Vector2(1, 1):
-		apply_scale(Vector2(-1, 1))
-	elif motion.x > 0 and scale != Vector2(1, 1):
-		apply_scale(Vector2(-1, 1))
-	active_cat_sprite.play(anim)
-	inactive_cat_sprite.play(anim)
-
-func black_cat_physics(delta):
-	if is_on_floor():
-		if Input.is_action_just_pressed(\"ui_up\") or Input.is_key_pressed(32):
-			motion.y = JUMP_HEIGHT
-	motion.y += GRAVITY
-
-func white_cat_physics(delta):
-	motion.y = 0
-
-func _physics_process(delta):
-	if cat_status == BLACK_CAT:
-		black_cat_physics(delta)
-	elif cat_status == WHITE_CAT:
-		white_cat_physics(delta)
-	basic_physics(delta)
-
-func _on_Cat_switchCat(count,status):
-	if cat_status == 0:
-		float_count = count - 1
-	get_node(\"/root/Main/Level0/CanvasLayer/GUI/MainBar/TransformBar/Background/TransformCount\").adjust(float_count,cat_status)
-"
-_sections_unfolded = [ "Resource" ]
+[ext_resource path="res://objs/Cat.gd" type="Script" id=1]
+[ext_resource path="res://images/cat/stand/sprite_0.png" type="Texture" id=2]
+[ext_resource path="res://images/cat/run/1.png" type="Texture" id=3]
+[ext_resource path="res://images/cat/run/2.png" type="Texture" id=4]
+[ext_resource path="res://images/cat/run/3.png" type="Texture" id=5]
+[ext_resource path="res://images/cat/run/4.png" type="Texture" id=6]
+[ext_resource path="res://images/cat/run/5.png" type="Texture" id=7]
+[ext_resource path="res://images/cat/run/6.png" type="Texture" id=8]
+[ext_resource path="res://images/cat/stand/sprite_1.png" type="Texture" id=9]
+[ext_resource path="res://images/cat/run/black/sprite_0.png" type="Texture" id=10]
+[ext_resource path="res://images/cat/run/black/sprite_1.png" type="Texture" id=11]
+[ext_resource path="res://images/cat/run/black/sprite_2.png" type="Texture" id=12]
+[ext_resource path="res://images/cat/run/black/sprite_3.png" type="Texture" id=13]
+[ext_resource path="res://images/cat/run/black/sprite_4.png" type="Texture" id=14]
+[ext_resource path="res://images/cat/run/black/sprite_5.png" type="Texture" id=15]
 
 [sub_resource type="SpriteFrames" id=1]
 
 animations = [ {
-"frames": [ ExtResource( 1 ) ],
+"frames": [ ExtResource( 2 ) ],
 "loop": true,
 "name": "idle",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 2 ), ExtResource( 3 ), ExtResource( 4 ), ExtResource( 5 ), ExtResource( 6 ), ExtResource( 7 ) ],
+"frames": [ ExtResource( 3 ), ExtResource( 4 ), ExtResource( 5 ), ExtResource( 6 ), ExtResource( 7 ), ExtResource( 8 ) ],
 "loop": true,
 "name": "run",
 "speed": 8.0
@@ -117,12 +33,12 @@ animations = [ {
 [sub_resource type="SpriteFrames" id=2]
 
 animations = [ {
-"frames": [ ExtResource( 8 ) ],
+"frames": [ ExtResource( 9 ) ],
 "loop": true,
 "name": "idle",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 9 ), ExtResource( 10 ), ExtResource( 11 ), ExtResource( 12 ), ExtResource( 13 ), ExtResource( 14 ) ],
+"frames": [ ExtResource( 10 ), ExtResource( 11 ), ExtResource( 12 ), ExtResource( 13 ), ExtResource( 14 ), ExtResource( 15 ) ],
 "loop": true,
 "name": "run",
 "speed": 8.0
@@ -135,7 +51,7 @@ input_pickable = false
 collision_layer = 1
 collision_mask = 1
 collision/safe_margin = 0.08
-script = SubResource( 3 )
+script = ExtResource( 1 )
 _sections_unfolded = [ "Transform", "Visibility" ]
 
 [node name="whitecat_sprite" type="AnimatedSprite" parent="." index="0"]
