@@ -1,6 +1,6 @@
 [gd_scene load_steps=19 format=2]
 
-[ext_resource path="res://KinematicBody2D.gd" type="Script" id=1]
+[ext_resource path="res://objs/Cat.gd" type="Script" id=1]
 [ext_resource path="res://images/cat/stand/sprite_0.png" type="Texture" id=2]
 [ext_resource path="res://images/cat/run/1.png" type="Texture" id=3]
 [ext_resource path="res://images/cat/run/2.png" type="Texture" id=4]
@@ -15,6 +15,8 @@
 [ext_resource path="res://images/cat/run/black/sprite_3.png" type="Texture" id=13]
 [ext_resource path="res://images/cat/run/black/sprite_4.png" type="Texture" id=14]
 [ext_resource path="res://images/cat/run/black/sprite_5.png" type="Texture" id=15]
+
+
 
 [sub_resource type="SpriteFrames" id=1]
 
