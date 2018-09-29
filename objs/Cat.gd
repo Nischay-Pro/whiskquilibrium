@@ -3,7 +3,7 @@ extends KinematicBody2D
 onready var active_cat_sprite = get_node("whitecat_sprite")
 onready var inactive_cat_sprite = get_node("blackcat_sprite")
 
-const UP = Vector2(0, -1) # PTSD from normal direction in project
+const UP = Vector2(0, -1)
 const GRAVITY  = 20
 const MOV_MOTION = 500
 const JUMP_HEIGHT = -500
@@ -18,10 +18,10 @@ var float_count = 20
 var motion = Vector2()
 
 func basic_physics(delta):	
-	if(cat_status == BLACK_CAT):
+	if cat_status == BLACK_CAT:
 		active_cat_sprite = get_node("blackcat_sprite")
 		inactive_cat_sprite = get_node("whitecat_sprite")
-	elif(cat_status == WHITE_CAT):
+	elif cat_status == WHITE_CAT:
 		active_cat_sprite = get_node("whitecat_sprite")
 		inactive_cat_sprite = get_node("blackcat_sprite")
 	inactive_cat_sprite.hide()
@@ -35,9 +35,9 @@ func basic_physics(delta):
 		motion.x = 0
 	
 	if Input.is_action_just_pressed("cat_state_switch"):
-		if(cat_status == WHITE_CAT):
+		if cat_status == WHITE_CAT:
 			cat_status = BLACK_CAT
-		elif(cat_status == BLACK_CAT):
+		elif cat_status == BLACK_CAT:
 			cat_status = WHITE_CAT
 			
 	motion = move_and_slide(motion, UP) # Up is up
@@ -62,8 +62,6 @@ func white_cat_physics(delta):
 	motion.y = 0
 
 func _physics_process(delta):
-#	# Called every frame. Delta is time since last frame.
-#	# Update game logic here.
 	if cat_status == BLACK_CAT:
 		black_cat_physics(delta)
 	elif cat_status == WHITE_CAT:
