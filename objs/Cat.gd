@@ -20,6 +20,8 @@ var float_triggered = false
 # Switch mechanics
 var switch_count = 20
 signal switchCat
+var switch_words = ["Kill me senpai", "I can't switch bitch!", "Nada", "Nope!", "Uh Huh"]
+
 
 # Input booleans
 var right_pressed = false
@@ -80,7 +82,7 @@ func toggle_cat_state():
 		inactive_cat_sprite.hide()
 		emit_signal("switchCat")
 	else:
-		cat_speak("I can't switch bitch!")
+		cat_speak(switch_words[randi() % switch_words.size()])
 
 func toggle_float():
 	float_triggered = not float_triggered
