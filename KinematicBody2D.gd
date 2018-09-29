@@ -1,6 +1,6 @@
 extends KinematicBody2D
 
-onready var sprite = get_node("cat")
+onready var cat_sprite = get_node("cat_sprite")
 
 # class member variables go here, for example:
 # var a = 2
@@ -43,10 +43,10 @@ func _physics_process(delta):
 	else:
 		anim = "run"
 	if motion.x < 0:
-		sprite.set_flip_h(false)
+		cat_sprite.set_flip_h(false)
 	elif motion.x > 0:
-		sprite.set_flip_h(true)
-	sprite.play(anim)
+		cat_sprite.set_flip_h(true)
+	cat_sprite.play(anim)
 	pass
 
 
