@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=2]
+[gd_scene load_steps=18 format=2]
 
 [ext_resource path="res://objs/Cat.gd" type="Script" id=1]
 [ext_resource path="res://images/cat/stand/sprite_0.png" type="Texture" id=2]
@@ -45,12 +45,7 @@ animations = [ {
 } ]
 _sections_unfolded = [ "Resource" ]
 
-[sub_resource type="RectangleShape2D" id=3]
-
-custom_solver_bias = 0.0
-extents = Vector2( 32, 32 )
-
-[node name="Cat" type="KinematicBody2D" index="0"]
+[node name="Cat" type="KinematicBody2D"]
 
 input_pickable = false
 collision_layer = 1
@@ -58,15 +53,11 @@ collision_mask = 1
 collision/safe_margin = 0.08
 script = ExtResource( 1 )
 _sections_unfolded = [ "Transform", "Visibility" ]
-__meta__ = {
-"_edit_group_": true
-}
 
 [node name="whitecat_sprite" type="AnimatedSprite" parent="." index="0"]
 
 frames = SubResource( 1 )
-animation = "run"
-frame = 2
+animation = "idle"
 playing = true
 flip_h = true
 _sections_unfolded = [ "Transform", "Visibility" ]
@@ -81,11 +72,7 @@ playing = true
 flip_h = true
 _sections_unfolded = [ "Visibility" ]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." index="2"]
-
-shape = SubResource( 3 )
-
-[node name="Camera2D" type="Camera2D" parent="." index="3"]
+[node name="Camera2D" type="Camera2D" parent="." index="2"]
 
 anchor_mode = 1
 rotating = false
@@ -109,5 +96,11 @@ drag_margin_bottom = 0.2
 editor_draw_screen = true
 editor_draw_limits = false
 editor_draw_drag_margin = false
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." index="3"]
+
+build_mode = 0
+polygon = PoolVector2Array( -22.11, 29.7722, 18.0848, 29.7722, 18.0848, 10.4075, 34.0999, -10.2133, 33.9953, -18.3778, 21.8531, -29.9966, 13.5838, -29.9966, 4.88741, -6.85978, -22.0859, -6.83405, -22.0906, 2.2238 )
+_sections_unfolded = [ "Transform" ]
 
 

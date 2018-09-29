@@ -45,12 +45,10 @@ func basic_physics(delta):
 		anim = "idle"
 	else:
 		anim = "run"
-	if motion.x < 0:
-		active_cat_sprite.set_flip_h(false)
-		inactive_cat_sprite.set_flip_h(false)
-	elif motion.x > 0:
-		active_cat_sprite.set_flip_h(true)
-		inactive_cat_sprite.set_flip_h(true)
+	if motion.x < 0 and scale == Vector2(1, 1):
+		apply_scale(Vector2(-1, 1))
+	elif motion.x > 0 and scale != Vector2(1, 1):
+		apply_scale(Vector2(-1, 1))
 	active_cat_sprite.play(anim)
 	inactive_cat_sprite.play(anim)
 

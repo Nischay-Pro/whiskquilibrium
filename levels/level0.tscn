@@ -40,3 +40,4 @@ transform = Transform2D( 1, 0, 0, 1, 0, 0 )
 [node name="GUI" parent="CanvasLayer" index="0" instance=ExtResource( 3 )]
 
 
+[editable path="TileSpawner/Root"]
