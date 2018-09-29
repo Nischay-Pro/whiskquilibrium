@@ -52,12 +52,13 @@ extents = Vector2( 32, 32 )
 
 [node name="Cat" type="KinematicBody2D" index="0"]
 
+position = Vector2( 160, 128 )
 input_pickable = false
 collision_layer = 1
 collision_mask = 1
 collision/safe_margin = 0.08
 script = ExtResource( 1 )
-_sections_unfolded = [ "Visibility" ]
+_sections_unfolded = [ "Transform", "Visibility" ]
 __meta__ = {
 "_edit_group_": true
 }
@@ -66,7 +67,6 @@ __meta__ = {
 
 frames = SubResource( 1 )
 animation = "run"
-frame = 4
 playing = true
 flip_h = true
 _sections_unfolded = [ "Transform", "Visibility" ]
@@ -76,6 +76,7 @@ _sections_unfolded = [ "Transform", "Visibility" ]
 visible = false
 frames = SubResource( 2 )
 animation = "run"
+frame = 2
 playing = true
 flip_h = true
 _sections_unfolded = [ "Visibility" ]

@@ -1,12 +1,7 @@
 [gd_scene load_steps=3 format=2]
 
 [ext_resource path="res://levels/level0.gd" type="Script" id=1]
-[ext_resource path="res://images/Blocks/sprite_1.png" type="Texture" id=2]
-
-[sub_resource type="RectangleShape2D" id=1]
-
-custom_solver_bias = 0.0
-extents = Vector2( 32, 32 )
+[ext_resource path="res://Tiles.tres" type="TileSet" id=2]
 
 [node name="World" type="Node"]
 
