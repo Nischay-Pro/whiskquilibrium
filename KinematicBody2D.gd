@@ -66,7 +66,6 @@ func _physics_process(delta):
 	if motion.x < 0 and scale == Vector2(1, 1):
 		apply_scale(Vector2(-1, 1))
 	elif motion.x > 0 and scale != Vector2(1, 1):
-		print(scale)
 		apply_scale(Vector2(-1, 1))
 	active_cat_sprite.play(anim)
 	inactive_cat_sprite.play(anim)

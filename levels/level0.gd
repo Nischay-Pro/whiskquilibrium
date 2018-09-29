@@ -9,7 +9,6 @@ func init_cat():
 
 func _ready():
 	init_cat()
-	pass
 
 func _process(delta):
 	if cat.position.y > get_viewport().get_visible_rect().end.y:
@@ -17,4 +16,3 @@ func _process(delta):
 		cat.queue_free()
 		cat = cat_scene.instance()
 		init_cat()
-	pass

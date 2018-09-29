@@ -1,9 +1,9 @@
 extends Node2D
 
-var is_white = false
+var is_white = true
 
 func _ready():
-	get_node("WhiteSprite").hide()
+	get_node("BlackSprite").hide()
 	
 func flip_color():
 	is_white = not is_white
