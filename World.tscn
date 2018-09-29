@@ -1,20 +1,21 @@
-[gd_scene load_steps=20 format=2]
+[gd_scene load_steps=21 format=2]
 
 [ext_resource path="res://KinematicBody2D.gd" type="Script" id=1]
-[ext_resource path="res://images/cat/stand/1.png" type="Texture" id=2]
+[ext_resource path="res://images/cat/stand/sprite_0.png" type="Texture" id=2]
 [ext_resource path="res://images/cat/run/1.png" type="Texture" id=3]
 [ext_resource path="res://images/cat/run/2.png" type="Texture" id=4]
 [ext_resource path="res://images/cat/run/3.png" type="Texture" id=5]
 [ext_resource path="res://images/cat/run/4.png" type="Texture" id=6]
 [ext_resource path="res://images/cat/run/5.png" type="Texture" id=7]
 [ext_resource path="res://images/cat/run/6.png" type="Texture" id=8]
-[ext_resource path="res://images/cat/run/black/sprite_0.png" type="Texture" id=9]
-[ext_resource path="res://images/cat/run/black/sprite_1.png" type="Texture" id=10]
-[ext_resource path="res://images/cat/run/black/sprite_2.png" type="Texture" id=11]
-[ext_resource path="res://images/cat/run/black/sprite_3.png" type="Texture" id=12]
-[ext_resource path="res://images/cat/run/black/sprite_4.png" type="Texture" id=13]
-[ext_resource path="res://images/cat/run/black/sprite_5.png" type="Texture" id=14]
-[ext_resource path="res://images/Blocks/sprite_1.png" type="Texture" id=15]
+[ext_resource path="res://images/cat/stand/sprite_1.png" type="Texture" id=9]
+[ext_resource path="res://images/cat/run/black/sprite_0.png" type="Texture" id=10]
+[ext_resource path="res://images/cat/run/black/sprite_1.png" type="Texture" id=11]
+[ext_resource path="res://images/cat/run/black/sprite_2.png" type="Texture" id=12]
+[ext_resource path="res://images/cat/run/black/sprite_3.png" type="Texture" id=13]
+[ext_resource path="res://images/cat/run/black/sprite_4.png" type="Texture" id=14]
+[ext_resource path="res://images/cat/run/black/sprite_5.png" type="Texture" id=15]
+[ext_resource path="res://images/Blocks/sprite_1.png" type="Texture" id=16]
 
 [sub_resource type="SpriteFrames" id=1]
 
@@ -33,16 +34,17 @@ animations = [ {
 [sub_resource type="SpriteFrames" id=4]
 
 animations = [ {
-"frames": [ ExtResource( 2 ) ],
+"frames": [ ExtResource( 9 ) ],
 "loop": true,
 "name": "idle",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 9 ), ExtResource( 10 ), ExtResource( 11 ), ExtResource( 12 ), ExtResource( 13 ), ExtResource( 14 ) ],
+"frames": [ ExtResource( 10 ), ExtResource( 11 ), ExtResource( 12 ), ExtResource( 13 ), ExtResource( 14 ), ExtResource( 15 ) ],
 "loop": true,
 "name": "run",
 "speed": 8.0
 } ]
+_sections_unfolded = [ "Resource" ]
 
 [sub_resource type="RectangleShape2D" id=2]
 
@@ -73,7 +75,7 @@ __meta__ = {
 
 frames = SubResource( 1 )
 animation = "run"
-frame = 2
+frame = 4
 playing = true
 flip_h = true
 _sections_unfolded = [ "Transform", "Visibility" ]
@@ -83,7 +85,7 @@ _sections_unfolded = [ "Transform", "Visibility" ]
 visible = false
 frames = SubResource( 4 )
 animation = "run"
-frame = 4
+frame = 5
 playing = true
 flip_h = true
 _sections_unfolded = [ "Visibility" ]
@@ -141,7 +143,7 @@ __meta__ = {
 modulate = Color( 0, 0, 0, 1 )
 position = Vector2( -1.90735e-006, 3.8147e-006 )
 scale = Vector2( 2, 2 )
-texture = ExtResource( 15 )
+texture = ExtResource( 16 )
 _sections_unfolded = [ "Transform", "Visibility" ]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/Wall" index="1"]
@@ -168,7 +170,7 @@ __meta__ = {
 modulate = Color( 0, 0, 0, 1 )
 position = Vector2( -1.90735e-006, 3.8147e-006 )
 scale = Vector2( 2, 2 )
-texture = ExtResource( 15 )
+texture = ExtResource( 16 )
 _sections_unfolded = [ "Transform", "Visibility" ]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/Wall2" index="1"]
@@ -195,7 +197,7 @@ __meta__ = {
 modulate = Color( 0, 0, 0, 1 )
 position = Vector2( -1.90735e-006, 3.8147e-006 )
 scale = Vector2( 2, 2 )
-texture = ExtResource( 15 )
+texture = ExtResource( 16 )
 _sections_unfolded = [ "Transform", "Visibility" ]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/Wall3" index="1"]
@@ -222,7 +224,7 @@ __meta__ = {
 modulate = Color( 0, 0, 0, 1 )
 position = Vector2( -1.90735e-006, 3.8147e-006 )
 scale = Vector2( 2, 2 )
-texture = ExtResource( 15 )
+texture = ExtResource( 16 )
 _sections_unfolded = [ "Transform", "Visibility" ]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/Wall4" index="1"]
@@ -249,7 +251,7 @@ __meta__ = {
 modulate = Color( 0, 0, 0, 1 )
 position = Vector2( -1.90735e-006, 3.8147e-006 )
 scale = Vector2( 2, 2 )
-texture = ExtResource( 15 )
+texture = ExtResource( 16 )
 _sections_unfolded = [ "Transform", "Visibility" ]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/Wall5" index="1"]
@@ -276,7 +278,7 @@ __meta__ = {
 modulate = Color( 0, 0, 0, 1 )
 position = Vector2( -1.90735e-006, 3.8147e-006 )
 scale = Vector2( 2, 2 )
-texture = ExtResource( 15 )
+texture = ExtResource( 16 )
 _sections_unfolded = [ "Transform", "Visibility" ]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/Wall6" index="1"]
@@ -303,7 +305,7 @@ __meta__ = {
 modulate = Color( 0, 0, 0, 1 )
 position = Vector2( -1.90735e-006, 3.8147e-006 )
 scale = Vector2( 2, 2 )
-texture = ExtResource( 15 )
+texture = ExtResource( 16 )
 _sections_unfolded = [ "Transform", "Visibility" ]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/Wall7" index="1"]
@@ -330,7 +332,7 @@ __meta__ = {
 modulate = Color( 0, 0, 0, 1 )
 position = Vector2( -1.90735e-006, 3.8147e-006 )
 scale = Vector2( 2, 2 )
-texture = ExtResource( 15 )
+texture = ExtResource( 16 )
 _sections_unfolded = [ "Transform", "Visibility" ]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/Wall8" index="1"]
@@ -357,7 +359,7 @@ __meta__ = {
 modulate = Color( 0, 0, 0, 1 )
 position = Vector2( -1.90735e-006, 3.8147e-006 )
 scale = Vector2( 2, 2 )
-texture = ExtResource( 15 )
+texture = ExtResource( 16 )
 _sections_unfolded = [ "Transform", "Visibility" ]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/Wall9" index="1"]
@@ -384,7 +386,7 @@ __meta__ = {
 modulate = Color( 0, 0, 0, 1 )
 position = Vector2( -1.90735e-006, 3.8147e-006 )
 scale = Vector2( 2, 2 )
-texture = ExtResource( 15 )
+texture = ExtResource( 16 )
 _sections_unfolded = [ "Transform", "Visibility" ]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/Wall10" index="1"]
@@ -411,7 +413,7 @@ __meta__ = {
 modulate = Color( 0, 0, 0, 1 )
 position = Vector2( -1.90735e-006, 3.8147e-006 )
 scale = Vector2( 2, 2 )
-texture = ExtResource( 15 )
+texture = ExtResource( 16 )
 _sections_unfolded = [ "Transform", "Visibility" ]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/Wall11" index="1"]
@@ -438,7 +440,7 @@ __meta__ = {
 modulate = Color( 0, 0, 0, 1 )
 position = Vector2( -1.90735e-006, 3.8147e-006 )
 scale = Vector2( 2, 2 )
-texture = ExtResource( 15 )
+texture = ExtResource( 16 )
 _sections_unfolded = [ "Transform", "Visibility" ]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/Wall12" index="1"]
