@@ -18,6 +18,7 @@ func _physics_process(delta):
 #	# Update game logic here.
 
 	if get_node(".").position.y > get_viewport_rect().end.y:
+		# Replace with a "reset-to-checkpoint" action later
 		queue_free()
 	
 	if(cat_status == 1):

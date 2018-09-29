@@ -76,7 +76,7 @@ __meta__ = {
 
 frames = SubResource( 1 )
 animation = "run"
-frame = 3
+frame = 5
 playing = true
 flip_h = true
 _sections_unfolded = [ "Transform", "Visibility" ]
@@ -86,7 +86,7 @@ _sections_unfolded = [ "Transform", "Visibility" ]
 visible = false
 frames = SubResource( 2 )
 animation = "run"
-frame = 5
+frame = 1
 playing = true
 flip_h = true
 _sections_unfolded = [ "Visibility" ]
@@ -205,6 +205,7 @@ shape = SubResource( 4 )
 
 [node name="Wall4" type="StaticBody2D" parent="Walls" index="3"]
 
+editor/display_folded = true
 position = Vector2( 256, 320 )
 input_pickable = false
 collision_layer = 1
@@ -420,6 +421,7 @@ shape = SubResource( 4 )
 
 [node name="Wall12" type="StaticBody2D" parent="Walls" index="11"]
 
+editor/display_folded = true
 position = Vector2( 64, 256 )
 input_pickable = false
 collision_layer = 1
@@ -443,9 +445,5 @@ _sections_unfolded = [ "Transform", "Visibility" ]
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/Wall12" index="1"]
 
 shape = SubResource( 4 )
-
-[node name="Tiles" type="Node2D" parent="." index="2"]
-
-[node name="Sprite" type="Sprite" parent="Tiles" index="0"]
 
 
