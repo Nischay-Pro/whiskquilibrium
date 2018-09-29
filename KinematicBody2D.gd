@@ -1,11 +1,7 @@
 extends KinematicBody2D
 
-onready var cat_sprite = get_node("whitecat_sprite")
-
-
-# class member variables go here, for example:
-# var a = 2
-# var b = "textvar"
+onready var active_cat_sprite = get_node("whitecat_sprite")
+onready var inactive_cat_sprite = get_node("blackcat_sprite")
 
 const UP = Vector2(0, -1) # PTSD from normal direction in project
 const GRAVITY  = 20
@@ -18,17 +14,15 @@ var anim = "idle"
 var motion = Vector2()
 
 func _physics_process(delta):
-#	# Called every frame. Delta is time since last frame.
-#	# Update game logic here.
 	
 	if(cat_status == 1):
-		get_node("whitecat_sprite").hide()
-		get_node("blackcat_sprite").show()
-		cat_sprite = get_node("blackcat_sprite")
+		active_cat_sprite = get_node("blackcat_sprite")
+		inactive_cat_sprite = get_node("whitecat_sprite")
 	elif(cat_status == 0):
-			get_node("blackcat_sprite").hide()
-			get_node("whitecat_sprite").show()
-			cat_sprite = get_node("whitecat_sprite")
+		active_cat_sprite = get_node("whitecat_sprite")
+		inactive_cat_sprite = get_node("blackcat_sprite")
+	inactive_cat_sprite.hide()
+	active_cat_sprite.show()
 	
 	
 	# Gravity
@@ -61,10 +55,13 @@ func _physics_process(delta):
 	else:
 		anim = "run"
 	if motion.x < 0:
-		cat_sprite.set_flip_h(false)
+		active_cat_sprite.set_flip_h(false)
+		inactive_cat_sprite.set_flip_h(false)
 	elif motion.x > 0:
-		cat_sprite.set_flip_h(true)
-	cat_sprite.play(anim)
+		active_cat_sprite.set_flip_h(true)
+		inactive_cat_sprite.set_flip_h(true)
+	active_cat_sprite.play(anim)
+	inactive_cat_sprite.play(anim)
 	pass
 
 
