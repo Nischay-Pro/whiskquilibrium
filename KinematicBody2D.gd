@@ -68,6 +68,5 @@ func _physics_process(delta):
 		inactive_cat_sprite.set_flip_h(true)
 	active_cat_sprite.play(anim)
 	inactive_cat_sprite.play(anim)
-	pass
 
 

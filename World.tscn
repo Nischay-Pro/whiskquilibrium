@@ -56,9 +56,7 @@ extents = Vector2( 32, 32 )
 custom_solver_bias = 0.0
 extents = Vector2( 32, 32 )
 
-[node name="World" type="Node"]
-
-editor/display_folded = true
+[node name="World" type="Node" index="0"]
 
 [node name="Cat" type="KinematicBody2D" parent="." index="0"]
 
@@ -78,7 +76,6 @@ __meta__ = {
 
 frames = SubResource( 1 )
 animation = "run"
-frame = 5
 playing = true
 flip_h = true
 _sections_unfolded = [ "Transform", "Visibility" ]
@@ -88,7 +85,7 @@ _sections_unfolded = [ "Transform", "Visibility" ]
 visible = false
 frames = SubResource( 2 )
 animation = "run"
-frame = 1
+frame = 2
 playing = true
 flip_h = true
 _sections_unfolded = [ "Visibility" ]
