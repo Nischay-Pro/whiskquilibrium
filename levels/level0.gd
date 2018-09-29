@@ -5,6 +5,7 @@ var cat = cat_scene.instance()
 
 func init_cat():
 	get_tree().get_root().add_child(cat)
+	#cat
 
 func _ready():
 	init_cat()
