@@ -1,11 +1,17 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://levels/level0.gd" type="Script" id=1]
 [ext_resource path="res://addons/tile_spawner/tile_spawner.gd" type="Script" id=2]
 [ext_resource path="res://addons/tile_spawner/tile_spawner_icon.png" type="Texture" id=3]
-[ext_resource path="res://objs/black_tile.tscn" type="PackedScene" id=4]
+[ext_resource path="res://objs/white_tile.tscn" type="PackedScene" id=4]
 [ext_resource path="res://images/Blocks/TilesFinal.png" type="Texture" id=5]
-[ext_resource path="res://objs/white_tile.tscn" type="PackedScene" id=6]
+[ext_resource path="res://objs/black_tile.tscn" type="PackedScene" id=6]
+[ext_resource path="res://objs/black_tile.gd" type="Script" id=7]
+
+[sub_resource type="RectangleShape2D" id=1]
+
+custom_solver_bias = 0.0
+extents = Vector2( 32, 32 )
 
 [node name="Level0" type="Node"]
 
@@ -26,21 +32,127 @@ grid_alignment = 0
 
 [node name="Sprite" type="Sprite" parent="TileSpawner" index="0" instance=ExtResource( 4 )]
 
-position = Vector2( 672, 288 )
+position = Vector2( 736, 224 )
 texture = ExtResource( 5 )
 region_enabled = true
-region_rect = Rect2( 0, 0, 64, 64 )
+region_rect = Rect2( 0, 64, 64, 64 )
 _sections_unfolded = [ "Region" ]
 
 [node name="Sprite2" type="Sprite" parent="TileSpawner" index="1" instance=ExtResource( 4 )]
 
-position = Vector2( 736, 288 )
+position = Vector2( 800, 224 )
+texture = ExtResource( 5 )
+region_enabled = true
+region_rect = Rect2( 0, 64, 64, 64 )
+_sections_unfolded = [ "Region" ]
+
+[node name="Sprite3" type="Sprite" parent="TileSpawner" index="2" instance=ExtResource( 4 )]
+
+position = Vector2( 864, 224 )
+texture = ExtResource( 5 )
+region_enabled = true
+region_rect = Rect2( 0, 64, 64, 64 )
+_sections_unfolded = [ "Region" ]
+
+[node name="Root" type="Node2D" parent="TileSpawner" index="3" instance=ExtResource( 6 )]
+
+editor/display_folded = true
+position = Vector2( 544, 288 )
+script = ExtResource( 7 )
+
+[node name="WhiteSprite" type="Sprite" parent="TileSpawner/Root" index="0"]
+
+texture = ExtResource( 5 )
+region_enabled = true
+region_rect = Rect2( 0, 64, 64, 64 )
+_sections_unfolded = [ "Region" ]
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="StaticBody2D" type="StaticBody2D" parent="TileSpawner/Root/WhiteSprite" index="0"]
+
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TileSpawner/Root/WhiteSprite/StaticBody2D" index="0"]
+
+shape = SubResource( 1 )
+
+[node name="BlackSprite" type="Sprite" parent="TileSpawner/Root" index="1"]
+
 texture = ExtResource( 5 )
 region_enabled = true
 region_rect = Rect2( 0, 0, 64, 64 )
 _sections_unfolded = [ "Region" ]
+__meta__ = {
+"_edit_group_": true
+}
 
-[node name="Sprite3" type="Sprite" parent="TileSpawner" index="2" instance=ExtResource( 6 )]
+[node name="StaticBody2D" type="StaticBody2D" parent="TileSpawner/Root/BlackSprite" index="0"]
+
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TileSpawner/Root/BlackSprite/StaticBody2D" index="0"]
+
+shape = SubResource( 1 )
+
+[node name="Root2" type="Node2D" parent="TileSpawner" index="4" instance=ExtResource( 6 )]
+
+position = Vector2( 608, 288 )
+script = ExtResource( 7 )
+
+[node name="Root3" type="Node2D" parent="TileSpawner" index="5" instance=ExtResource( 6 )]
+
+position = Vector2( 672, 288 )
+script = ExtResource( 7 )
+
+[node name="Root4" type="Node2D" parent="TileSpawner" index="6" instance=ExtResource( 6 )]
+
+position = Vector2( 736, 288 )
+script = ExtResource( 7 )
+
+[node name="Root5" type="Node2D" parent="TileSpawner" index="7" instance=ExtResource( 6 )]
+
+position = Vector2( 800, 288 )
+script = ExtResource( 7 )
+
+[node name="Sprite4" type="Sprite" parent="TileSpawner" index="8" instance=ExtResource( 4 )]
+
+position = Vector2( 416, 352 )
+texture = ExtResource( 5 )
+region_enabled = true
+region_rect = Rect2( 0, 64, 64, 64 )
+_sections_unfolded = [ "Region" ]
+
+[node name="Sprite5" type="Sprite" parent="TileSpawner" index="9" instance=ExtResource( 4 )]
+
+position = Vector2( 480, 352 )
+texture = ExtResource( 5 )
+region_enabled = true
+region_rect = Rect2( 0, 64, 64, 64 )
+_sections_unfolded = [ "Region" ]
+
+[node name="Sprite6" type="Sprite" parent="TileSpawner" index="10" instance=ExtResource( 4 )]
+
+position = Vector2( 544, 352 )
+texture = ExtResource( 5 )
+region_enabled = true
+region_rect = Rect2( 0, 64, 64, 64 )
+_sections_unfolded = [ "Region" ]
+
+[node name="Sprite7" type="Sprite" parent="TileSpawner" index="11" instance=ExtResource( 4 )]
 
 position = Vector2( 608, 352 )
 texture = ExtResource( 5 )
@@ -48,164 +160,65 @@ region_enabled = true
 region_rect = Rect2( 0, 64, 64, 64 )
 _sections_unfolded = [ "Region" ]
 
-[node name="Sprite4" type="Sprite" parent="TileSpawner" index="3" instance=ExtResource( 6 )]
+[node name="Root6" type="Node2D" parent="TileSpawner" index="12" instance=ExtResource( 6 )]
 
-position = Vector2( 672, 352 )
-texture = ExtResource( 5 )
-region_enabled = true
-region_rect = Rect2( 0, 64, 64, 64 )
-_sections_unfolded = [ "Region" ]
+position = Vector2( 32, 416 )
+script = ExtResource( 7 )
 
-[node name="Sprite5" type="Sprite" parent="TileSpawner" index="4" instance=ExtResource( 6 )]
-
-position = Vector2( 736, 352 )
-texture = ExtResource( 5 )
-region_enabled = true
-region_rect = Rect2( 0, 64, 64, 64 )
-_sections_unfolded = [ "Region" ]
-
-[node name="Sprite6" type="Sprite" parent="TileSpawner" index="5" instance=ExtResource( 4 )]
+[node name="Root7" type="Node2D" parent="TileSpawner" index="13" instance=ExtResource( 6 )]
 
 position = Vector2( 96, 416 )
-texture = ExtResource( 5 )
-region_enabled = true
-region_rect = Rect2( 0, 0, 64, 64 )
-_sections_unfolded = [ "Region" ]
+script = ExtResource( 7 )
 
-[node name="Sprite7" type="Sprite" parent="TileSpawner" index="6" instance=ExtResource( 4 )]
+[node name="Sprite8" type="Sprite" parent="TileSpawner" index="14" instance=ExtResource( 4 )]
 
 position = Vector2( 160, 416 )
 texture = ExtResource( 5 )
 region_enabled = true
-region_rect = Rect2( 0, 0, 64, 64 )
+region_rect = Rect2( 0, 64, 64, 64 )
 _sections_unfolded = [ "Region" ]
 
-[node name="Sprite8" type="Sprite" parent="TileSpawner" index="7" instance=ExtResource( 4 )]
+[node name="Sprite9" type="Sprite" parent="TileSpawner" index="15" instance=ExtResource( 4 )]
 
 position = Vector2( 224, 416 )
 texture = ExtResource( 5 )
 region_enabled = true
-region_rect = Rect2( 0, 0, 64, 64 )
+region_rect = Rect2( 0, 64, 64, 64 )
 _sections_unfolded = [ "Region" ]
 
-[node name="Sprite9" type="Sprite" parent="TileSpawner" index="8" instance=ExtResource( 4 )]
+[node name="Sprite10" type="Sprite" parent="TileSpawner" index="16" instance=ExtResource( 4 )]
 
 position = Vector2( 288, 416 )
 texture = ExtResource( 5 )
 region_enabled = true
-region_rect = Rect2( 0, 0, 64, 64 )
+region_rect = Rect2( 0, 64, 64, 64 )
 _sections_unfolded = [ "Region" ]
 
-[node name="Sprite10" type="Sprite" parent="TileSpawner" index="9" instance=ExtResource( 6 )]
+[node name="Root8" type="Node2D" parent="TileSpawner" index="17" instance=ExtResource( 6 )]
 
-position = Vector2( 480, 416 )
+position = Vector2( 352, 416 )
+script = ExtResource( 7 )
+
+[node name="Root9" type="Node2D" parent="TileSpawner" index="18" instance=ExtResource( 6 )]
+
+position = Vector2( 416, 416 )
+script = ExtResource( 7 )
+
+[node name="Sprite11" type="Sprite" parent="TileSpawner" index="19" instance=ExtResource( 4 )]
+
+position = Vector2( 928, 480 )
 texture = ExtResource( 5 )
 region_enabled = true
 region_rect = Rect2( 0, 64, 64, 64 )
 _sections_unfolded = [ "Region" ]
 
-[node name="Sprite11" type="Sprite" parent="TileSpawner" index="10" instance=ExtResource( 6 )]
+[node name="Sprite12" type="Sprite" parent="TileSpawner" index="20" instance=ExtResource( 4 )]
 
-position = Vector2( 544, 416 )
+position = Vector2( 992, 480 )
 texture = ExtResource( 5 )
 region_enabled = true
 region_rect = Rect2( 0, 64, 64, 64 )
 _sections_unfolded = [ "Region" ]
 
-[node name="Sprite12" type="Sprite" parent="TileSpawner" index="11" instance=ExtResource( 4 )]
 
-position = Vector2( 608, 416 )
-texture = ExtResource( 5 )
-region_enabled = true
-region_rect = Rect2( 0, 0, 64, 64 )
-_sections_unfolded = [ "Region" ]
-
-[node name="Sprite13" type="Sprite" parent="TileSpawner" index="12" instance=ExtResource( 4 )]
-
-position = Vector2( 672, 416 )
-texture = ExtResource( 5 )
-region_enabled = true
-region_rect = Rect2( 0, 0, 64, 64 )
-_sections_unfolded = [ "Region" ]
-
-[node name="Sprite14" type="Sprite" parent="TileSpawner" index="13" instance=ExtResource( 6 )]
-
-position = Vector2( 736, 416 )
-texture = ExtResource( 5 )
-region_enabled = true
-region_rect = Rect2( 0, 64, 64, 64 )
-_sections_unfolded = [ "Region" ]
-
-[node name="Sprite15" type="Sprite" parent="TileSpawner" index="14" instance=ExtResource( 6 )]
-
-position = Vector2( 928, 416 )
-texture = ExtResource( 5 )
-region_enabled = true
-region_rect = Rect2( 0, 64, 64, 64 )
-_sections_unfolded = [ "Region" ]
-
-[node name="Sprite16" type="Sprite" parent="TileSpawner" index="15" instance=ExtResource( 6 )]
-
-position = Vector2( 992, 416 )
-texture = ExtResource( 5 )
-region_enabled = true
-region_rect = Rect2( 0, 64, 64, 64 )
-_sections_unfolded = [ "Region" ]
-
-[node name="Sprite17" type="Sprite" parent="TileSpawner" index="16" instance=ExtResource( 6 )]
-
-position = Vector2( 224, 480 )
-texture = ExtResource( 5 )
-region_enabled = true
-region_rect = Rect2( 0, 64, 64, 64 )
-_sections_unfolded = [ "Region" ]
-
-[node name="Sprite18" type="Sprite" parent="TileSpawner" index="17" instance=ExtResource( 6 )]
-
-position = Vector2( 288, 480 )
-texture = ExtResource( 5 )
-region_enabled = true
-region_rect = Rect2( 0, 64, 64, 64 )
-_sections_unfolded = [ "Region" ]
-
-[node name="Sprite19" type="Sprite" parent="TileSpawner" index="18" instance=ExtResource( 6 )]
-
-position = Vector2( 352, 480 )
-texture = ExtResource( 5 )
-region_enabled = true
-region_rect = Rect2( 0, 64, 64, 64 )
-_sections_unfolded = [ "Region" ]
-
-[node name="Sprite20" type="Sprite" parent="TileSpawner" index="19" instance=ExtResource( 6 )]
-
-position = Vector2( 416, 480 )
-texture = ExtResource( 5 )
-region_enabled = true
-region_rect = Rect2( 0, 64, 64, 64 )
-_sections_unfolded = [ "Region" ]
-
-[node name="Sprite21" type="Sprite" parent="TileSpawner" index="20" instance=ExtResource( 4 )]
-
-position = Vector2( 672, 480 )
-texture = ExtResource( 5 )
-region_enabled = true
-region_rect = Rect2( 0, 0, 64, 64 )
-_sections_unfolded = [ "Region" ]
-
-[node name="Sprite22" type="Sprite" parent="TileSpawner" index="21" instance=ExtResource( 4 )]
-
-position = Vector2( 736, 480 )
-texture = ExtResource( 5 )
-region_enabled = true
-region_rect = Rect2( 0, 0, 64, 64 )
-_sections_unfolded = [ "Region" ]
-
-[node name="Sprite23" type="Sprite" parent="TileSpawner" index="22" instance=ExtResource( 4 )]
-
-position = Vector2( 800, 480 )
-texture = ExtResource( 5 )
-region_enabled = true
-region_rect = Rect2( 0, 0, 64, 64 )
-_sections_unfolded = [ "Region" ]
-
-
+[editable path="TileSpawner/Root"]

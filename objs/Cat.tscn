@@ -47,7 +47,6 @@ _sections_unfolded = [ "Resource" ]
 
 [node name="Cat" type="KinematicBody2D" index="0"]
 
-position = Vector2( 12.5555, -1.75193 )
 input_pickable = false
 collision_layer = 1
 collision_mask = 1
@@ -68,7 +67,6 @@ _sections_unfolded = [ "Transform", "Visibility" ]
 visible = false
 frames = SubResource( 2 )
 animation = "run"
-frame = 1
 playing = true
 flip_h = true
 _sections_unfolded = [ "Visibility" ]
@@ -101,6 +99,7 @@ editor_draw_drag_margin = false
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." index="3"]
 
 build_mode = 0
-polygon = PoolVector2Array( 7.44448, -8.24807, 17.4445, -28.2481, 37.4445, -8.24807, 17.4445, 11.7519, 17.4445, 31.7519, -22.5555, 31.7519, -22.5555, -8.24807 )
+polygon = PoolVector2Array( -22.11, 29.7722, 18.0848, 29.7722, 18.0848, 10.4075, 34.0999, -10.2133, 33.9953, -18.3778, 21.8531, -29.9966, 13.5838, -29.9966, 4.88741, -6.85978, -30.1396, -6.85978, -22.0906, 2.2238 )
+_sections_unfolded = [ "Transform" ]
 
 
