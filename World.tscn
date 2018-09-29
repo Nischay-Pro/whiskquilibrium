@@ -76,10 +76,7 @@ __meta__ = {
 
 frames = SubResource( 1 )
 animation = "run"
-<<<<<<< HEAD
-frame = 2
-=======
->>>>>>> 55532d0d594769c2625dc942cf62ac041cebeca8
+frame = 3
 playing = true
 flip_h = true
 _sections_unfolded = [ "Transform", "Visibility" ]
@@ -89,11 +86,7 @@ _sections_unfolded = [ "Transform", "Visibility" ]
 visible = false
 frames = SubResource( 2 )
 animation = "run"
-<<<<<<< HEAD
-frame = 4
-=======
-frame = 2
->>>>>>> 55532d0d594769c2625dc942cf62ac041cebeca8
+frame = 5
 playing = true
 flip_h = true
 _sections_unfolded = [ "Visibility" ]
@@ -129,8 +122,6 @@ editor_draw_drag_margin = false
 
 [node name="Walls" type="Node" parent="." index="1"]
 
-editor/display_folded = true
-
 [node name="Wall" type="StaticBody2D" parent="Walls" index="0"]
 
 editor/display_folded = true
@@ -149,7 +140,7 @@ __meta__ = {
 [node name="Sprite" type="Sprite" parent="Walls/Wall" index="0"]
 
 modulate = Color( 0, 0, 0, 1 )
-position = Vector2( -1.90735e-06, 3.8147e-06 )
+position = Vector2( -1.90735e-006, 3.8147e-006 )
 scale = Vector2( 2, 2 )
 texture = ExtResource( 16 )
 _sections_unfolded = [ "Transform", "Visibility" ]
@@ -176,7 +167,7 @@ __meta__ = {
 [node name="Sprite" type="Sprite" parent="Walls/Wall2" index="0"]
 
 modulate = Color( 0, 0, 0, 1 )
-position = Vector2( -1.90735e-06, 3.8147e-06 )
+position = Vector2( -1.90735e-006, 3.8147e-006 )
 scale = Vector2( 2, 2 )
 texture = ExtResource( 16 )
 _sections_unfolded = [ "Transform", "Visibility" ]
@@ -203,7 +194,7 @@ __meta__ = {
 [node name="Sprite" type="Sprite" parent="Walls/Wall3" index="0"]
 
 modulate = Color( 0, 0, 0, 1 )
-position = Vector2( -1.90735e-06, 3.8147e-06 )
+position = Vector2( -1.90735e-006, 3.8147e-006 )
 scale = Vector2( 2, 2 )
 texture = ExtResource( 16 )
 _sections_unfolded = [ "Transform", "Visibility" ]
@@ -214,7 +205,6 @@ shape = SubResource( 4 )
 
 [node name="Wall4" type="StaticBody2D" parent="Walls" index="3"]
 
-editor/display_folded = true
 position = Vector2( 256, 320 )
 input_pickable = false
 collision_layer = 1
@@ -230,7 +220,7 @@ __meta__ = {
 [node name="Sprite" type="Sprite" parent="Walls/Wall4" index="0"]
 
 modulate = Color( 0, 0, 0, 1 )
-position = Vector2( -1.90735e-06, 3.8147e-06 )
+position = Vector2( -1.90735e-006, 3.8147e-006 )
 scale = Vector2( 2, 2 )
 texture = ExtResource( 16 )
 _sections_unfolded = [ "Transform", "Visibility" ]
@@ -257,7 +247,7 @@ __meta__ = {
 [node name="Sprite" type="Sprite" parent="Walls/Wall5" index="0"]
 
 modulate = Color( 0, 0, 0, 1 )
-position = Vector2( -1.90735e-06, 3.8147e-06 )
+position = Vector2( -1.90735e-006, 3.8147e-006 )
 scale = Vector2( 2, 2 )
 texture = ExtResource( 16 )
 _sections_unfolded = [ "Transform", "Visibility" ]
@@ -284,7 +274,7 @@ __meta__ = {
 [node name="Sprite" type="Sprite" parent="Walls/Wall6" index="0"]
 
 modulate = Color( 0, 0, 0, 1 )
-position = Vector2( -1.90735e-06, 3.8147e-06 )
+position = Vector2( -1.90735e-006, 3.8147e-006 )
 scale = Vector2( 2, 2 )
 texture = ExtResource( 16 )
 _sections_unfolded = [ "Transform", "Visibility" ]
@@ -311,7 +301,7 @@ __meta__ = {
 [node name="Sprite" type="Sprite" parent="Walls/Wall7" index="0"]
 
 modulate = Color( 0, 0, 0, 1 )
-position = Vector2( -1.90735e-06, 3.8147e-06 )
+position = Vector2( -1.90735e-006, 3.8147e-006 )
 scale = Vector2( 2, 2 )
 texture = ExtResource( 16 )
 _sections_unfolded = [ "Transform", "Visibility" ]
@@ -338,7 +328,7 @@ __meta__ = {
 [node name="Sprite" type="Sprite" parent="Walls/Wall8" index="0"]
 
 modulate = Color( 0, 0, 0, 1 )
-position = Vector2( -1.90735e-06, 3.8147e-06 )
+position = Vector2( -1.90735e-006, 3.8147e-006 )
 scale = Vector2( 2, 2 )
 texture = ExtResource( 16 )
 _sections_unfolded = [ "Transform", "Visibility" ]
@@ -365,7 +355,7 @@ __meta__ = {
 [node name="Sprite" type="Sprite" parent="Walls/Wall9" index="0"]
 
 modulate = Color( 0, 0, 0, 1 )
-position = Vector2( -1.90735e-06, 3.8147e-06 )
+position = Vector2( -1.90735e-006, 3.8147e-006 )
 scale = Vector2( 2, 2 )
 texture = ExtResource( 16 )
 _sections_unfolded = [ "Transform", "Visibility" ]
@@ -392,7 +382,7 @@ __meta__ = {
 [node name="Sprite" type="Sprite" parent="Walls/Wall10" index="0"]
 
 modulate = Color( 0, 0, 0, 1 )
-position = Vector2( -1.90735e-06, 3.8147e-06 )
+position = Vector2( -1.90735e-006, 3.8147e-006 )
 scale = Vector2( 2, 2 )
 texture = ExtResource( 16 )
 _sections_unfolded = [ "Transform", "Visibility" ]
@@ -419,7 +409,7 @@ __meta__ = {
 [node name="Sprite" type="Sprite" parent="Walls/Wall11" index="0"]
 
 modulate = Color( 0, 0, 0, 1 )
-position = Vector2( -1.90735e-06, 3.8147e-06 )
+position = Vector2( -1.90735e-006, 3.8147e-006 )
 scale = Vector2( 2, 2 )
 texture = ExtResource( 16 )
 _sections_unfolded = [ "Transform", "Visibility" ]
@@ -430,7 +420,6 @@ shape = SubResource( 4 )
 
 [node name="Wall12" type="StaticBody2D" parent="Walls" index="11"]
 
-editor/display_folded = true
 position = Vector2( 64, 256 )
 input_pickable = false
 collision_layer = 1
@@ -446,7 +435,7 @@ __meta__ = {
 [node name="Sprite" type="Sprite" parent="Walls/Wall12" index="0"]
 
 modulate = Color( 0, 0, 0, 1 )
-position = Vector2( -1.90735e-06, 3.8147e-06 )
+position = Vector2( -1.90735e-006, 3.8147e-006 )
 scale = Vector2( 2, 2 )
 texture = ExtResource( 16 )
 _sections_unfolded = [ "Transform", "Visibility" ]
@@ -454,5 +443,9 @@ _sections_unfolded = [ "Transform", "Visibility" ]
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/Wall12" index="1"]
 
 shape = SubResource( 4 )
+
+[node name="Tiles" type="Node2D" parent="." index="2"]
+
+[node name="Sprite" type="Sprite" parent="Tiles" index="0"]
 
 
