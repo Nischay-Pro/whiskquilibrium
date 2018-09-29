@@ -16,6 +16,7 @@ var anim = "idle"
 # Floating mechanics
 var float_count = 20
 var float_triggered = false
+signal floatCat
 
 # Switch mechanics
 var switch_count = 20
@@ -34,6 +35,7 @@ func _ready():
 	active_cat_sprite.show()
 	inactive_cat_sprite.hide()
 	_on_Cat_switchCat(true)
+	emit_signal("floatCat")
 
 func horizontal_physics():
 	if right_pressed:
@@ -97,6 +99,7 @@ func check_inputs():
 			toggle_float()
 	if Input.is_action_just_pressed("trigger_float") and cat_state == WHITE_CAT:
 		toggle_float()
+		emit_signal("floatCat")
 
 func play_animation():
 	active_cat_sprite.play(anim)
@@ -116,3 +119,7 @@ func _on_Cat_switchCat(default = false):
 	if default == false:
 		switch_count -= 1
 	get_node("/root/Main/Level0/CanvasLayer/GUI/MainBar/TransformBar/Background/TransformCount").adjust(switch_count, cat_state)
+
+
+func _on_Cat_floatCat():
+	get_node("/root/Main/Level0/CanvasLayer/GUI/MainBar/FloatBar/FloatCounter/Background/FloatCount").adjust(float_triggered)

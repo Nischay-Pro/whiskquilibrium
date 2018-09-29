@@ -3,7 +3,7 @@
 [ext_resource path="res://objs/FloatBar.tscn" type="PackedScene" id=1]
 [ext_resource path="res://objs/TransformBar.tscn" type="PackedScene" id=2]
 
-[node name="GUI" type="MarginContainer"]
+[node name="GUI" type="MarginContainer" index="0"]
 
 anchor_left = 0.0
 anchor_top = 0.0
