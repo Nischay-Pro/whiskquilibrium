@@ -13,7 +13,7 @@ func init_cat():
 func load_level(level_num):
 	if level_num == 0:
 		current_level_scene = preload("res://levels/level0.tscn")
-		start_pos = Vector2(1000,200)
+		start_pos = Vector2(256,200)
 	current_level_node = current_level_scene.instance()
 	add_child(current_level_node)
 
