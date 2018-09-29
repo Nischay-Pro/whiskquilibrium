@@ -31,7 +31,6 @@ var motion = Vector2()
 func _ready():
 	active_cat_sprite.show()
 	inactive_cat_sprite.hide()
-	print(active_cat_sprite.get_name())
 
 func horizontal_physics(delta):
 	if right_pressed:

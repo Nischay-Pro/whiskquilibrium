@@ -1,8 +1,5 @@
 extends Node
 
-# class member variables go here, for example:
-# var a = 2
-# var b = "textvar"
 var current_level_scene
 const cat_scene = preload("res://objs/Cat.tscn")
 var cat = cat_scene.instance()
