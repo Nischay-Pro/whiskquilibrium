@@ -14,6 +14,11 @@ var anim = "idle"
 var motion = Vector2()
 
 func _physics_process(delta):
+#	# Called every frame. Delta is time since last frame.
+#	# Update game logic here.
+
+	if get_node(".").position.y > get_viewport_rect().end.y:
+		queue_free()
 	
 	if(cat_status == 1):
 		active_cat_sprite = get_node("blackcat_sprite")
