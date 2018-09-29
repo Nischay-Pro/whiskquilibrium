@@ -60,6 +60,7 @@ extents = Vector2( 32, 32 )
 
 [node name="Cat" type="KinematicBody2D" parent="." index="0"]
 
+editor/display_folded = true
 position = Vector2( 160, 95 )
 input_pickable = false
 collision_layer = 1
@@ -85,7 +86,6 @@ _sections_unfolded = [ "Transform", "Visibility" ]
 visible = false
 frames = SubResource( 4 )
 animation = "run"
-frame = 5
 playing = true
 flip_h = true
 _sections_unfolded = [ "Visibility" ]
