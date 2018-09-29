@@ -31,7 +31,7 @@ animations = [ {
 "speed": 8.0
 } ]
 
-[sub_resource type="SpriteFrames" id=4]
+[sub_resource type="SpriteFrames" id=2]
 
 animations = [ {
 "frames": [ ExtResource( 9 ) ],
@@ -46,12 +46,12 @@ animations = [ {
 } ]
 _sections_unfolded = [ "Resource" ]
 
-[sub_resource type="RectangleShape2D" id=2]
+[sub_resource type="RectangleShape2D" id=3]
 
 custom_solver_bias = 0.0
 extents = Vector2( 32, 32 )
 
-[sub_resource type="RectangleShape2D" id=3]
+[sub_resource type="RectangleShape2D" id=4]
 
 custom_solver_bias = 0.0
 extents = Vector2( 32, 32 )
@@ -84,7 +84,7 @@ _sections_unfolded = [ "Transform", "Visibility" ]
 [node name="blackcat_sprite" type="AnimatedSprite" parent="Cat" index="1"]
 
 visible = false
-frames = SubResource( 4 )
+frames = SubResource( 2 )
 animation = "run"
 playing = true
 flip_h = true
@@ -92,7 +92,7 @@ _sections_unfolded = [ "Visibility" ]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Cat" index="2"]
 
-shape = SubResource( 2 )
+shape = SubResource( 3 )
 
 [node name="Camera2D" type="Camera2D" parent="Cat" index="3"]
 
@@ -148,7 +148,7 @@ _sections_unfolded = [ "Transform", "Visibility" ]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/Wall" index="1"]
 
-shape = SubResource( 3 )
+shape = SubResource( 4 )
 
 [node name="Wall2" type="StaticBody2D" parent="Walls" index="1"]
 
@@ -175,7 +175,7 @@ _sections_unfolded = [ "Transform", "Visibility" ]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/Wall2" index="1"]
 
-shape = SubResource( 3 )
+shape = SubResource( 4 )
 
 [node name="Wall3" type="StaticBody2D" parent="Walls" index="2"]
 
@@ -202,7 +202,7 @@ _sections_unfolded = [ "Transform", "Visibility" ]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/Wall3" index="1"]
 
-shape = SubResource( 3 )
+shape = SubResource( 4 )
 
 [node name="Wall4" type="StaticBody2D" parent="Walls" index="3"]
 
@@ -229,7 +229,7 @@ _sections_unfolded = [ "Transform", "Visibility" ]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/Wall4" index="1"]
 
-shape = SubResource( 3 )
+shape = SubResource( 4 )
 
 [node name="Wall5" type="StaticBody2D" parent="Walls" index="4"]
 
@@ -256,7 +256,7 @@ _sections_unfolded = [ "Transform", "Visibility" ]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/Wall5" index="1"]
 
-shape = SubResource( 3 )
+shape = SubResource( 4 )
 
 [node name="Wall6" type="StaticBody2D" parent="Walls" index="5"]
 
@@ -283,7 +283,7 @@ _sections_unfolded = [ "Transform", "Visibility" ]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/Wall6" index="1"]
 
-shape = SubResource( 3 )
+shape = SubResource( 4 )
 
 [node name="Wall7" type="StaticBody2D" parent="Walls" index="6"]
 
@@ -310,7 +310,7 @@ _sections_unfolded = [ "Transform", "Visibility" ]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/Wall7" index="1"]
 
-shape = SubResource( 3 )
+shape = SubResource( 4 )
 
 [node name="Wall8" type="StaticBody2D" parent="Walls" index="7"]
 
@@ -337,7 +337,7 @@ _sections_unfolded = [ "Transform", "Visibility" ]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/Wall8" index="1"]
 
-shape = SubResource( 3 )
+shape = SubResource( 4 )
 
 [node name="Wall9" type="StaticBody2D" parent="Walls" index="8"]
 
@@ -364,7 +364,7 @@ _sections_unfolded = [ "Transform", "Visibility" ]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/Wall9" index="1"]
 
-shape = SubResource( 3 )
+shape = SubResource( 4 )
 
 [node name="Wall10" type="StaticBody2D" parent="Walls" index="9"]
 
@@ -391,7 +391,7 @@ _sections_unfolded = [ "Transform", "Visibility" ]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/Wall10" index="1"]
 
-shape = SubResource( 3 )
+shape = SubResource( 4 )
 
 [node name="Wall11" type="StaticBody2D" parent="Walls" index="10"]
 
@@ -418,7 +418,7 @@ _sections_unfolded = [ "Transform", "Visibility" ]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/Wall11" index="1"]
 
-shape = SubResource( 3 )
+shape = SubResource( 4 )
 
 [node name="Wall12" type="StaticBody2D" parent="Walls" index="11"]
 
@@ -445,6 +445,6 @@ _sections_unfolded = [ "Transform", "Visibility" ]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/Wall12" index="1"]
 
-shape = SubResource( 3 )
+shape = SubResource( 4 )
 
 

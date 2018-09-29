@@ -41,7 +41,7 @@ func _physics_process(delta):
 	else:
 		motion.x = 0
 	
-	if Input.is_key_pressed(65):
+	if Input.is_action_just_pressed("cat_state_switch"):
 		if(cat_status == 0):
 			cat_status = 1
 		elif(cat_status == 1):
