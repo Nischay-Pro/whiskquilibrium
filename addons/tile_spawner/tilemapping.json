@@ -1,0 +1,11 @@
+{
+    "BlackTile": {
+         "scene": "res://objs/black_tile.tscn"
+    },
+    "GreyTile": {
+         "scene": "res://objs/grey_tile.tscn"
+    },
+    "WhiteTile": {
+         "scene": "res://objs/white_tile.tscn"
+    }
+}

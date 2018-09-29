@@ -7,7 +7,7 @@ const current_level_scene = preload("res://levels/level0.tscn")
 var current_level = current_level_scene.instance()
 
 func _ready():
-	get_tree().get_root().add_child(current_level)
+	get_node(".").add_child(current_level)
 
 
 #func _process(delta):

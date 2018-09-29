@@ -20,6 +20,7 @@ func _physics_process(delta):
 	if get_node(".").position.y > get_viewport_rect().end.y:
 		# Replace with a "reset-to-checkpoint" action later
 		queue_free()
+		return
 	
 	if(cat_status == 1):
 		active_cat_sprite = get_node("blackcat_sprite")
@@ -30,6 +31,8 @@ func _physics_process(delta):
 	inactive_cat_sprite.hide()
 	active_cat_sprite.show()
 	
+	#for i in range(get_slide_count()):
+		#print(get_slide_collision(i).collider.get_name() + str(i))
 	
 	# Gravity
 	motion.y += GRAVITY # So every frame the gravity effect is included
