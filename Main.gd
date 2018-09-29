@@ -7,6 +7,7 @@ var current_level_scene
 const cat_scene = preload("res://objs/Cat.tscn")
 var cat = cat_scene.instance()
 var start_pos = Vector2(0,0)
+var cat_ref = weakref(cat)
 
 func init_cat():
 	cat.position = start_pos
@@ -15,7 +16,7 @@ func init_cat():
 func load_level(level_num):
 	if level_num == 0:
 		current_level_scene = preload("res://levels/level0.tscn")
-		start_pos = Vector2(200, 0)
+		start_pos = Vector2(256,200)
 
 func _ready():
 	load_level(0)
@@ -23,8 +24,10 @@ func _ready():
 	init_cat()
 
 func _process(delta):
-	if cat.position.y > get_viewport().get_visible_rect().end.y:
-		cat.queue_free()
+	if cat_ref.get_ref() == null:
 		cat = cat_scene.instance()
 		init_cat()
-	pass
+		cat_ref = weakref(cat)
+
+	if cat.position.y > get_viewport().get_visible_rect().end.y:
+		cat.queue_free()
