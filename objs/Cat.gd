@@ -5,7 +5,7 @@ onready var inactive_cat_sprite = get_node("blackcat_sprite")
 
 const UP = Vector2(0, -1) # PTSD from normal direction in project
 const GRAVITY  = 20
-const MOV_MOTION = 300
+const MOV_MOTION = 500
 const JUMP_HEIGHT = -500
 const BLACK_CAT = 0
 const WHITE_CAT = 1
