@@ -107,7 +107,7 @@ func check_inputs():
 		toggle_cat_state()
 		if cat_state == BLACK_CAT and float_triggered:
 			toggle_float()
-	if Input.is_action_just_pressed("trigger_float") and cat_state == WHITE_CAT:
+	if Input.is_key_pressed(KEY_S) and cat_state == WHITE_CAT:
 		toggle_float()
 
 func play_animation():
