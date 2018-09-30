@@ -19,7 +19,7 @@ use_filter = false
 font_data = SubResource( 1 )
 _sections_unfolded = [ "Font", "Settings" ]
 
-[node name="FloatBar" type="HBoxContainer"]
+[node name="FloatBar" type="HBoxContainer" index="0"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -141,7 +141,7 @@ min_value = 0.0
 max_value = 20.0
 step = 1.0
 page = 0.0
-value = 20.0
+value = 0.0
 exp_edit = false
 rounded = false
 texture_under = ExtResource( 4 )
