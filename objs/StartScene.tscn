@@ -19,7 +19,7 @@ use_filter = false
 font_data = SubResource( 1 )
 _sections_unfolded = [ "Extra Spacing", "Font", "Settings" ]
 
-[node name="StartScene" type="Control" index="0"]
+[node name="StartScene" type="Control"]
 
 anchor_left = 0.0
 anchor_top = 0.0

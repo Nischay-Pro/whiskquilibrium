@@ -5,21 +5,16 @@ onready var tie = get_node("Panel/TextContainer")
 func narrate():
 	tie.reset()
 	tie.set_color(Color(1,1,1))
-	tie.buff_text("Text me on Telegram bruh, ", 0.1)
-	tie.buff_text("lalala\n", 0.2)
+	tie.buff_text("We all know Schrondinger, ", 0.08)
+	tie.buff_text("famous for his theoritical cat experiment\n", 0.08)
+	tie.buff_silence(0.5)
+	tie.buff_text("\n\nBut what very few know is, ", 0.04)
+	tie.buff_text("that there was an actual cat\n", 0.04)
+	tie.buff_silence(0.5)
+	tie.buff_text("and an actual box. ", 0.04)
+	tie.buff_text("And in that box the cat,\n", 0.04)
+	tie.buff_text("experienced life and death like nothing else.\n", 0.04)
 	tie.buff_silence(1)
-	tie.buff_text("It is so beautiful, ", 0.1)
-	tie.buff_text("lalala\n", 0.2)
-	tie.buff_silence(1)
-	tie.buff_text("I love this song, ", 0.1)
-	tie.buff_text("lalala\n", 0.2)
-	tie.buff_silence(1)
-	tie.buff_text("But now I'll ", 0.1) # WAIT FOR THE DROP
-	tie.buff_text("DROP", 0.02) # ?????
-	tie.buff_silence(0.4)
-	tie.buff_text(" THE BASS\n", 0.02) # !!!!!
-	tie.buff_silence(0.4)
-	tie.buff_text("TVUVTUVUTUVU WOODBODBOWBDODBO TUUVUTVU WODWVDOOWDV WODOWVOOWDVOWVD DUBDUBDUBUDUDB OWVDOWVWDOWVDOWVDOWVDWVDOWVDOWVODV", 0.04) # I firmly believe this particular verse is my Magna Opus.
 	tie.set_state(tie.STATE_OUTPUT)
 
 func _ready():

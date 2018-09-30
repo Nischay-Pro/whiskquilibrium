@@ -11,7 +11,7 @@
 [ext_resource path="res://objs/Cat.tscn" type="PackedScene" id=9]
 [ext_resource path="res://objs/portal.tscn" type="PackedScene" id=10]
 
-[node name="Level0" type="Node"]
+[node name="Level0" type="Node" index="0"]
 
 [node name="TileSpawner" type="Node2D" parent="." index="0"]
 
@@ -358,7 +358,7 @@ position = Vector2( 736, 416 )
 
 position = Vector2( 800, 416 )
 script = ExtResource( 6 )
-speech = "I think I need to jump on that trophy"
+speech = ""
 
 [node name="Root6" parent="TileSpawner" index="83" instance=ExtResource( 5 )]
 
@@ -492,7 +492,7 @@ position = Vector2( 1248, 736 )
 
 position = Vector2( 32, 800 )
 script = ExtResource( 7 )
-speech = "Use the Left and Right Arrow key to move"
+speech = ""
 
 [node name="Sprite99" parent="TileSpawner" index="116" instance=ExtResource( 3 )]
 
