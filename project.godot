@@ -20,7 +20,7 @@ window/size/height=768
 
 [editor_plugins]
 
-enabled=PoolStringArray( "balloon", "tile_spawner" )
+enabled=PoolStringArray( "GodotTIE", "balloon", "tile_spawner" )
 
 [input]
 
