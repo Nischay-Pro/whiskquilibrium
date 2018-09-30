@@ -1,7 +1,7 @@
 extends Node
 const cat_scene = preload("res://objs/Cat.tscn")
 
-var curr_level = -1
+var curr_level = 0
 var curr_lvl_obj
 var current_level_tile_list
 
@@ -25,13 +25,12 @@ func init_level(curr_level_scene):
 	current_level_tile_list = temp_list
 
 func load_level():
-	var level = get_node("level_test")
 #	var arr = get_tree().get_root().get_node("Main").get_children()
 #	for i in arr:
 #		print(i.get_name())
-	get_tree().get_root().remove_child(curr_lvl_obj)
-	level.queue_free()
-	var level_num = curr_level + 1
+	remove_child(curr_lvl_obj)
+
+	var level_num = curr_level + 2
 	if level_num == 0:
 		init_level(preload("res://levels/level0.tscn"))
 #	if level_num == 1:
