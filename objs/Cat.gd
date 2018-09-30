@@ -9,13 +9,14 @@ const MOV_MOTION = 500
 const JUMP_HEIGHT = -500
 const BLACK_CAT = 0
 const WHITE_CAT = 1
+const MAX_FLOAT_COUNT = 64 * 20
 
 # Cat state
 var cat_state = BLACK_CAT
 var anim = "idle"
 
 # Floating mechanics
-var float_count = 20
+var float_count = 64 * 20
 var float_triggered = false
 signal floatCat
 
@@ -122,7 +123,15 @@ func _physics_process(delta):
 	elif cat_state == WHITE_CAT:
 		white_cat_physics()
 	horizontal_physics()
+	var initial_x_position = global_position.x
 	motion = move_and_slide(motion, UP)
+	var delta_x_position = initial_x_position - global_position.x
+	print(initial_x_position, global_position.x)
+	if float_triggered == true:
+		#print(float_count)
+		#print(delta_x_motion)
+		float_count = max(0, float_count - abs(delta_x_position))
+		emit_signal("floatCat")
 	for i in range(get_slide_count()):
 		var current_collider = get_slide_collision(i).collider
 		if current_collider.get_parent().get_class() != "Sprite":
@@ -141,4 +150,4 @@ func _on_Cat_switchCat(default = false):
 
 
 func _on_Cat_floatCat():
-	get_node("/root/Main/" + get_node("/root/Main").get_child(0).get_name() + "/CanvasLayer/GUI/MainBar/FloatBar/FloatCounter/Background/FloatCount").adjust(float_triggered)
+	get_node("/root/Main/" + get_node("/root/Main").get_child(0).get_name() + "/CanvasLayer/GUI/MainBar/FloatBar/FloatCounter/Background/FloatCount").adjust(float_triggered, float_count, MAX_FLOAT_COUNT)
