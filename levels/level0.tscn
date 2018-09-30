@@ -11,6 +11,7 @@
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." index="0"]
 
+editor/display_folded = true
 layer = 1
 offset = Vector2( 0, 0 )
 rotation = 0.0
@@ -21,6 +22,7 @@ transform = Transform2D( 1, 0, 0, 1, 0, 0 )
 
 [node name="TileSpawner" type="Node2D" parent="." index="1"]
 
+editor/display_folded = true
 script = ExtResource( 2 )
 __meta__ = {
 "_editor_icon": ExtResource( 3 )
