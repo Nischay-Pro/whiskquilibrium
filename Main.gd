@@ -29,8 +29,8 @@ func load_level():
 	var level_num = curr_level
 	if level_num == 0:
 		init_level(preload("res://levels/level0.tscn"))
-#	if level_num == 1:
-#		init_level(preload("res://levels/level1.tscn"))
+	if level_num == 1:
+		init_level(preload("res://levels/level1.tscn"))
 #	if level_num == 2:
 #		init_level(preload("res://levels/level2.tscn"))
 
@@ -44,7 +44,7 @@ func _ready():
 
 
 func _process(delta):
-	if curr_lvl_obj.get_node("Cat").position.y > get_viewport().get_visible_rect().end.y:
+	if curr_lvl_obj.get_node("Cat").position.y -200 > get_viewport().get_visible_rect().end.y:
 		load_level()
 	if Input.is_key_pressed(KEY_R):
 		load_level()

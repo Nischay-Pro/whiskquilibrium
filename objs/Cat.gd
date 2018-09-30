@@ -16,7 +16,7 @@ var cat_state = BLACK_CAT
 var anim = "idle"
 
 # Floating mechanics
-var float_count = 64 * 0
+var float_count = 64 * 10
 var float_triggered = false
 signal floatCat
 
