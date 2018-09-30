@@ -5,6 +5,7 @@ const WHITE = 1
 
 var tile_state = BLACK
 var cat_node = null
+var tile_list = null
 
 func _ready():
 	get_node("BlackSprite").show()

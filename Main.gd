@@ -1,4 +1,11 @@
 extends Node
+<<<<<<< HEAD
+=======
+
+var current_level_scene
+var current_level_node
+var current_level_tile_list
+>>>>>>> e84523ee3acd525d3597346f51dcace7352d053e
 const cat_scene = preload("res://objs/Cat.tscn")
 
 var curr_level = -1
@@ -26,8 +33,19 @@ func load_level():
 	var level_num = curr_level + 1
 	if level_num == 0:
 		start_pos = Vector2(256,200)
+<<<<<<< HEAD
 		init_level(preload("res://levels/level0.tscn"))
 
+=======
+	current_level_node = current_level_scene.instance()
+	current_level_tile_list = current_level_node.get_node("TileSpawner").get_children()
+	var temp_list = []
+	for X in current_level_tile_list:
+		if X.get_class() != "Sprite":
+			temp_list.append(X)
+	current_level_tile_list = temp_list
+	add_child(current_level_node)
+>>>>>>> e84523ee3acd525d3597346f51dcace7352d053e
 
 func _ready():
 	# start with level_test
