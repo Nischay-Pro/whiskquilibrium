@@ -16,14 +16,14 @@ var cat_state = BLACK_CAT
 var anim = "idle"
 
 # Floating mechanics
-var float_count = 64 * 20
+var float_count = 64 * 0
 var float_triggered = false
 signal floatCat
 
 # Switch mechanics
 var switch_count = 20
 signal switchCat
-var switch_words = ["Kill me senpai", "I can't switch bitch!", "Nada", "Nope!", "Uh Huh"]
+var switch_words = ["The wave function has firmly collapsed!", "Nada", "Nope!", "Uh Huh"]
 
 # Input booleans
 var right_pressed = false
@@ -38,7 +38,7 @@ func _ready():
 	active_cat_sprite.show()
 	inactive_cat_sprite.hide()
 	_on_Cat_switchCat(true)
-	emit_signal("floatCat", false)
+	emit_signal("floatCat")
 
 func horizontal_physics():
 	if right_pressed:
@@ -126,10 +126,7 @@ func _physics_process(delta):
 	var initial_x_position = global_position.x
 	motion = move_and_slide(motion, UP)
 	var delta_x_position = initial_x_position - global_position.x
-	print(initial_x_position, global_position.x)
 	if float_triggered == true:
-		#print(float_count)
-		#print(delta_x_motion)
 		float_count = max(0, float_count - abs(delta_x_position))
 		emit_signal("floatCat")
 	for i in range(get_slide_count()):
@@ -141,6 +138,9 @@ func _physics_process(delta):
 	while i >= 0:
 		if colliders[i].global_position.distance_to(global_position) > 85:
 			colliders[i].flip_color()
+			if colliders[i].tile_state == colliders[i].WHITE:
+				float_count += 64
+				emit_signal("floatCat")
 			colliders.remove(i)
 		i -= 1
 
