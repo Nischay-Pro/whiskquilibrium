@@ -1,8 +1,10 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://objs/StartScene.gd" type="Script" id=1]
 [ext_resource path="res://addons/GodotTIE/text_interface_engine.gd" type="Script" id=2]
 [ext_resource path="res://addons/GodotTIE/GodotTIE_icon.png" type="Texture" id=3]
+[ext_resource path="res://images/next.png" type="Texture" id=4]
+[ext_resource path="res://objs/TextureButton.gd" type="Script" id=5]
 
 [sub_resource type="DynamicFontData" id=1]
 
@@ -17,7 +19,7 @@ use_filter = false
 font_data = SubResource( 1 )
 _sections_unfolded = [ "Extra Spacing", "Font", "Settings" ]
 
-[node name="StartScene" type="Control"]
+[node name="StartScene" type="Control" index="0"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -58,7 +60,7 @@ anchor_bottom = 0.0
 margin_left = 128.0
 margin_top = 64.0
 margin_right = 800.0
-margin_bottom = 608.0
+margin_bottom = 544.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 mouse_filter = 0
@@ -78,5 +80,34 @@ FONT = SubResource( 2 )
 PRINT_INPUT = true
 BLINKING_INPUT = true
 INPUT_CHARACTERS_LIMIT = -1
+
+[node name="TextureButton" type="TextureButton" parent="Panel" index="1"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 384.0
+margin_top = 576.0
+margin_right = 512.0
+margin_bottom = 616.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+focus_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+group = null
+texture_normal = ExtResource( 4 )
+texture_pressed = ExtResource( 4 )
+stretch_mode = 3
+script = ExtResource( 5 )
+_sections_unfolded = [ "Textures" ]
+
+[connection signal="pressed" from="Panel/TextureButton" to="Panel/TextureButton" method="_on_TextureButton_pressed"]
 
 
