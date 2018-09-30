@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=2]
+[gd_scene load_steps=24 format=2]
 
 [ext_resource path="res://objs/Cat.gd" type="Script" id=1]
 [ext_resource path="res://images/cat/stand/sprite_0.png" type="Texture" id=2]
@@ -20,6 +20,7 @@
 [ext_resource path="res://addons/balloon/assets/OpenComicFont.tres" type="DynamicFont" id=18]
 [ext_resource path="res://addons/balloon/assets/balloon.theme" type="Theme" id=19]
 [ext_resource path="res://objs/sound_jump.wav" type="AudioStream" id=20]
+[ext_resource path="res://images/backgrounds/background3.png" type="Texture" id=21]
 
 [sub_resource type="SpriteFrames" id=1]
 
@@ -50,7 +51,7 @@ animations = [ {
 } ]
 _sections_unfolded = [ "Resource" ]
 
-[node name="Cat" type="KinematicBody2D" index="0"]
+[node name="Cat" type="KinematicBody2D"]
 
 input_pickable = false
 collision_layer = 1
@@ -72,7 +73,6 @@ _sections_unfolded = [ "Transform", "Visibility" ]
 visible = false
 frames = SubResource( 2 )
 animation = "run"
-frame = 2
 playing = true
 flip_h = true
 _sections_unfolded = [ "Visibility" ]
@@ -133,7 +133,7 @@ text = ""
 ratio = 1.0
 font_height_adjust = 0.0
 padding = 8.0
-shadown_width = 4.0
+shadown_width = 2.0
 text_color = Color( 0, 0, 0, 1 )
 color = Color( 1, 1, 1, 1 )
 color_center = Color( 1, 1, 1, 1 )
@@ -161,6 +161,34 @@ max_distance = 2000.0
 attenuation = 1.0
 bus = "Master"
 area_mask = 1
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="." index="6"]
+
+layer = -1
+offset = Vector2( 0, 0 )
+rotation = 0.0
+scale = Vector2( 1, 1 )
+transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+scroll_offset = Vector2( 0, 0 )
+scroll_base_offset = Vector2( 0, 0 )
+scroll_base_scale = Vector2( 1, 1 )
+scroll_limit_begin = Vector2( 0, 0 )
+scroll_limit_end = Vector2( 0, 0 )
+scroll_ignore_camera_zoom = true
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground" index="0"]
+
+motion_scale = Vector2( 1, 1 )
+motion_offset = Vector2( 0, 0 )
+motion_mirroring = Vector2( 1024, 768 )
+_sections_unfolded = [ "Motion", "Transform" ]
+
+[node name="Sprite" type="Sprite" parent="ParallaxBackground/ParallaxLayer" index="0"]
+
+modulate = Color( 0.460938, 0.460938, 0.460938, 1 )
+texture = ExtResource( 21 )
+centered = false
+_sections_unfolded = [ "Offset", "Visibility" ]
 
 [connection signal="floatCat" from="." to="." method="_on_Cat_floatCat"]
 

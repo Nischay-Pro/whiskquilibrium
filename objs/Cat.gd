@@ -145,13 +145,9 @@ func _physics_process(delta):
 		i -= 1
 
 func _on_Cat_switchCat(default = false):
-	var arr = get_node("/root/").get_children()
-	for i in arr:
-		print(i.get_name())
-
 	if default == false:
 		switch_count -= 1
-#	get_node("/root/Main/" + get_node("/root/Main").get_child(1).get_name() + "/CanvasLayer/GUI/MainBar/TransformBar/Background/TransformCount").adjust(switch_count, cat_state)
+	get_node("/root/Main/" + get_node("/root/Main").get_child(0).get_name() + "/CanvasLayer/GUI/MainBar/TransformBar/Background/TransformCount").adjust(switch_count, cat_state)
 
 
 func _on_Cat_floatCat():
