@@ -31,7 +31,7 @@ var motion = Vector2()
 func _ready():
 	active_cat_sprite.show()
 	inactive_cat_sprite.hide()
-	_on_Cat_switchCat(true)
+	_on_Cat_switchCat(true)		
 
 func horizontal_physics():
 	if right_pressed:
@@ -66,6 +66,12 @@ func cat_speak(text):
 
 func toggle_cat_state():
 	if switch_count != 0:
+		# Check for overlap with tiles
+		for tile_node in get_parent().current_level_tile_list:
+			var distance_from_tile = tile_node.global_position.distance_to(self.global_position)
+			if distance_from_tile < 50:
+				cat_speak("Can't switch states inside a block")
+				return
 		# Toggle cat_state
 		if cat_state == WHITE_CAT:
 			cat_state = BLACK_CAT
@@ -108,7 +114,7 @@ func _physics_process(delta):
 	elif cat_state == WHITE_CAT:
 		white_cat_physics()
 	horizontal_physics()
-	motion = move_and_slide(motion, UP)
+	motion = move_and_slide(motion, UP)			
 
 func _on_Cat_switchCat(default = false):
 	if default == false:
