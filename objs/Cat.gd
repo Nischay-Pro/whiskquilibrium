@@ -55,6 +55,7 @@ func black_cat_physics():
 	if is_on_floor():
 		if jump_pressed:
 			motion.y = JUMP_HEIGHT
+			$sound_jump.play()
 	motion.y += GRAVITY
 
 func white_cat_physics():

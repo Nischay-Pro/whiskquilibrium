@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=2]
+[gd_scene load_steps=23 format=2]
 
 [ext_resource path="res://objs/Cat.gd" type="Script" id=1]
 [ext_resource path="res://images/cat/stand/sprite_0.png" type="Texture" id=2]
@@ -19,6 +19,7 @@
 [ext_resource path="res://addons/balloon/assets/icon_balloon.png" type="Texture" id=17]
 [ext_resource path="res://addons/balloon/assets/OpenComicFont.tres" type="DynamicFont" id=18]
 [ext_resource path="res://addons/balloon/assets/balloon.theme" type="Theme" id=19]
+[ext_resource path="res://objs/sound_jump.wav" type="AudioStream" id=20]
 
 [sub_resource type="SpriteFrames" id=1]
 
@@ -130,9 +131,9 @@ __meta__ = {
 }
 text = ""
 ratio = 1.0
-font_height_adjust = 0
-padding = 8
-shadown_width = 4
+font_height_adjust = 0.0
+padding = 8.0
+shadown_width = 4.0
 text_color = Color( 0, 0, 0, 1 )
 color = Color( 1, 1, 1, 1 )
 color_center = Color( 1, 1, 1, 1 )
@@ -149,6 +150,17 @@ text_material = null
 script_path = null
 ui_theme = ExtResource( 19 )
 show_debug_messages = false
+
+[node name="sound_jump" type="AudioStreamPlayer2D" parent="." index="5"]
+
+stream = ExtResource( 20 )
+volume_db = 0.0
+pitch_scale = 1.0
+autoplay = false
+max_distance = 2000.0
+attenuation = 1.0
+bus = "Master"
+area_mask = 1
 
 [connection signal="switchCat" from="." to="." method="_on_Cat_switchCat"]
 
