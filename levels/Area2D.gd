@@ -7,7 +7,7 @@ signal next_level()
 
 func _ready():
 	var mainNode = get_tree().get_root().get_node("Main")
-	self.connect("next_level", mainNode, "load_level")
+	self.connect("next_level", mainNode, "load_next_level")
 	pass
 
 func _process(delta):

@@ -5,14 +5,6 @@ var curr_level = 0
 var curr_lvl_obj
 var current_level_tile_list
 
-var cat
-var start_pos = Vector2(0,0)
-
-func init_cat():
-	cat = cat_scene.instance()
-	cat.position = start_pos
-	add_child(cat)
-
 func init_level(curr_level_scene):
 	curr_lvl_obj = curr_level_scene.instance()
 	add_child(curr_lvl_obj)
@@ -23,6 +15,10 @@ func init_level(curr_level_scene):
 		if X.get_class() != "Sprite":
 			temp_list.append(X)
 	current_level_tile_list = temp_list
+	
+func load_next_level():
+	curr_level = curr_level + 1
+	load_level()
 
 func load_level():
 #	var arr = get_tree().get_root().get_node("Main").get_children()
@@ -30,11 +26,11 @@ func load_level():
 #		print(i.get_name())
 	remove_child(curr_lvl_obj)
 
-	var level_num = curr_level + 2
+	var level_num = curr_level
 	if level_num == 0:
 		init_level(preload("res://levels/level0.tscn"))
-#	if level_num == 1:
-#		init_level(preload("res://levels/level1.tscn"))
+	if level_num == 1:
+		init_level(preload("res://levels/level1.tscn"))
 	if level_num == 2:
 		init_level(preload("res://levels/level2.tscn"))
 
@@ -49,4 +45,5 @@ func _ready():
 
 func _process(delta):
 	if curr_lvl_obj.get_node("Cat").position.y > get_viewport().get_visible_rect().end.y:
-		get_tree().reload_current_scene()
+		load_level()
+#		get_tree().reload_current_scene()
