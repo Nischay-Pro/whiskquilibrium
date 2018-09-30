@@ -8,7 +8,7 @@
 [ext_resource path="res://objs/GUI.tscn" type="PackedScene" id=6]
 [ext_resource path="res://objs/Cat.tscn" type="PackedScene" id=7]
 
-[node name="Level0" type="Node"]
+[node name="Level0" type="Node" index="0"]
 
 [node name="TileSpawner" type="Node2D" parent="." index="0"]
 

@@ -5,11 +5,11 @@
 [ext_resource path="res://objs/grey_tile.tscn" type="PackedScene" id=3]
 [ext_resource path="res://objs/white_tile.tscn" type="PackedScene" id=4]
 [ext_resource path="res://objs/black_tile.tscn" type="PackedScene" id=5]
-[ext_resource path="res://objs/portal.tscn" type="PackedScene" id=6]
-[ext_resource path="res://objs/GUI.tscn" type="PackedScene" id=7]
-[ext_resource path="res://objs/Cat.tscn" type="PackedScene" id=8]
+[ext_resource path="res://objs/GUI.tscn" type="PackedScene" id=6]
+[ext_resource path="res://objs/Cat.tscn" type="PackedScene" id=7]
+[ext_resource path="res://objs/portal.tscn" type="PackedScene" id=8]
 
-[node name="Level3" type="Node"]
+[node name="Level3" type="Node" index="0"]
 
 [node name="TileSpawner" type="Node2D" parent="." index="0"]
 
@@ -372,10 +372,6 @@ position = Vector2( 2208, 1056 )
 
 position = Vector2( 2272, 1056 )
 
-[node name="Area2D" parent="TileSpawner" index="87" instance=ExtResource( 6 )]
-
-position = Vector2( -55.8669, 223.468 )
-
 [node name="CanvasLayer" type="CanvasLayer" parent="." index="1"]
 
 layer = 1
@@ -384,10 +380,14 @@ rotation = 0.0
 scale = Vector2( 1, 1 )
 transform = Transform2D( 1, 0, 0, 1, 0, 0 )
 
-[node name="GUI" parent="CanvasLayer" index="0" instance=ExtResource( 7 )]
+[node name="GUI" parent="CanvasLayer" index="0" instance=ExtResource( 6 )]
 
-[node name="Cat" parent="." index="2" instance=ExtResource( 8 )]
+[node name="Cat" parent="." index="2" instance=ExtResource( 7 )]
 
 position = Vector2( -47.4216, 83.6853 )
+
+[node name="Area2D" parent="." index="3" instance=ExtResource( 8 )]
+
+position = Vector2( -55.8669, 223.468 )
 
 

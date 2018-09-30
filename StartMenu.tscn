@@ -7,7 +7,7 @@
 [ext_resource path="res://QuitButton.gd" type="Script" id=5]
 [ext_resource path="res://images/title.png" type="Texture" id=6]
 
-[node name="StartMenu" type="Node" index="0"]
+[node name="StartMenu" type="Node"]
 
 [node name="NinePatchRect" type="NinePatchRect" parent="." index="0"]
 
