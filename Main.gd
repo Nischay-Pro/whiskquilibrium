@@ -46,4 +46,7 @@ func _ready():
 func _process(delta):
 	if curr_lvl_obj.get_node("Cat").position.y > get_viewport().get_visible_rect().end.y:
 		load_level()
+	if Input.is_key_pressed(KEY_R):
+		load_level()
+
 #		get_tree().reload_current_scene()
