@@ -7,12 +7,8 @@ var tile_state = BLACK
 var cat_node = null
 
 func _ready():
-	print("creating blacknodes")
 	get_node("BlackSprite").show()
 	get_node("WhiteSprite").hide()
-	var arr = get_tree().get_root().get_node("Main").get_children()
-	for i in arr:
-		print(i.get_name())
 	cat_node = get_tree().get_root().get_node("Main").get_node("Cat")
 	
 func flip_color():
