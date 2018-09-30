@@ -94,6 +94,7 @@ func toggle_cat_state():
 
 func toggle_float():
 	float_triggered = not float_triggered
+	emit_signal("floatCat")
 	
 func check_inputs():
 	right_pressed = Input.is_action_pressed("ui_right")
@@ -105,7 +106,6 @@ func check_inputs():
 			toggle_float()
 	if Input.is_action_just_pressed("trigger_float") and cat_state == WHITE_CAT:
 		toggle_float()
-		emit_signal("floatCat")
 
 func play_animation():
 	active_cat_sprite.play(anim)
