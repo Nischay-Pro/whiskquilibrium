@@ -2,12 +2,12 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/GodotTIE_icon.png-06c5755e573090fa68219dcd4c5b75cc.stex"
+path="res://.import/background1.png-53f473f760ad7cd4a5699727427d293a.stex"
 
 [deps]
 
-source_file="res://addons/GodotTIE/GodotTIE_icon.png"
-dest_files=[ "res://.import/GodotTIE_icon.png-06c5755e573090fa68219dcd4c5b75cc.stex" ]
+source_file="res://images/backgrounds/background1.png"
+dest_files=[ "res://.import/background1.png-53f473f760ad7cd4a5699727427d293a.stex" ]
 
 [params]
 
