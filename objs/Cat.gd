@@ -35,7 +35,7 @@ func _ready():
 	active_cat_sprite.show()
 	inactive_cat_sprite.hide()
 	_on_Cat_switchCat(true)
-	emit_signal("floatCat")
+	emit_signal("floatCat", false)
 
 func horizontal_physics():
 	if right_pressed:
