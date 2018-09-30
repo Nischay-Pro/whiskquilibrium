@@ -31,8 +31,8 @@ func load_level():
 		init_level(preload("res://levels/level0.tscn"))
 	if level_num == 1:
 		init_level(preload("res://levels/level1.tscn"))
-#	if level_num == 2:
-#		init_level(preload("res://levels/level2.tscn"))
+	if level_num == 2:
+		init_level(preload("res://levels/level2.tscn"))
 
 
 func _ready():
