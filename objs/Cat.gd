@@ -37,7 +37,7 @@ func _ready():
 	active_cat_sprite.show()
 	inactive_cat_sprite.hide()
 	_on_Cat_switchCat(true)
-	emit_signal("floatCat")
+	emit_signal("floatCat", false)
 
 func horizontal_physics():
 	if right_pressed:
@@ -137,8 +137,8 @@ func _physics_process(delta):
 func _on_Cat_switchCat(default = false):
 	if default == false:
 		switch_count -= 1
-	get_node("/root/Main/Level0/CanvasLayer/GUI/MainBar/TransformBar/Background/TransformCount").adjust(switch_count, cat_state)
+	get_node("/root/Main/" + get_node("/root/Main").get_child(0).get_name() + "/CanvasLayer/GUI/MainBar/TransformBar/Background/TransformCount").adjust(switch_count, cat_state)
 
 
 func _on_Cat_floatCat():
-	get_node("/root/Main/Level0/CanvasLayer/GUI/MainBar/FloatBar/FloatCounter/Background/FloatCount").adjust(float_triggered)
+	get_node("/root/Main/" + get_node("/root/Main").get_child(0).get_name() + "/CanvasLayer/GUI/MainBar/FloatBar/FloatCounter/Background/FloatCount").adjust(float_triggered)

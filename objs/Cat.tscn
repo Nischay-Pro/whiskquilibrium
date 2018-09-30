@@ -72,7 +72,7 @@ _sections_unfolded = [ "Transform", "Visibility" ]
 visible = false
 frames = SubResource( 2 )
 animation = "run"
-frame = 3
+frame = 1
 playing = true
 flip_h = true
 _sections_unfolded = [ "Visibility" ]
@@ -163,3 +163,7 @@ bus = "Master"
 area_mask = 1
 
 [connection signal="floatCat" from="." to="." method="_on_Cat_floatCat"]
+
+[connection signal="switchCat" from="." to="." method="_on_Cat_switchCat"]
+
+
