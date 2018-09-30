@@ -115,4 +115,4 @@ func _physics_process(delta):
 func _on_Cat_switchCat(default = false):
 	if default == false:
 		switch_count -= 1
-	get_node("/root/Main/Level0/CanvasLayer/GUI/MainBar/TransformBar/Background/TransformCount").adjust(switch_count, cat_state)
+#	get_node("/root/Main/Level0/CanvasLayer/GUI/MainBar/TransformBar/Background/TransformCount").adjust(switch_count, cat_state)

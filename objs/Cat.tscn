@@ -49,7 +49,7 @@ animations = [ {
 } ]
 _sections_unfolded = [ "Resource" ]
 
-[node name="Cat" type="KinematicBody2D" index="0"]
+[node name="Cat" type="KinematicBody2D"]
 
 input_pickable = false
 collision_layer = 1
@@ -71,7 +71,7 @@ _sections_unfolded = [ "Transform", "Visibility" ]
 visible = false
 frames = SubResource( 2 )
 animation = "run"
-frame = 1
+frame = 3
 playing = true
 flip_h = true
 _sections_unfolded = [ "Visibility" ]
@@ -130,9 +130,9 @@ __meta__ = {
 }
 text = ""
 ratio = 1.0
-font_height_adjust = 0
-padding = 8
-shadown_width = 4
+font_height_adjust = 0.0
+padding = 8.0
+shadown_width = 4.0
 text_color = Color( 0, 0, 0, 1 )
 color = Color( 1, 1, 1, 1 )
 color_center = Color( 1, 1, 1, 1 )
