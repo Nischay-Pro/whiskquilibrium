@@ -1,0 +1,1118 @@
+[gd_scene load_steps=10 format=2]
+
+[ext_resource path="res://addons/tile_spawner/tile_spawner.gd" type="Script" id=1]
+[ext_resource path="res://addons/tile_spawner/tile_spawner_icon.png" type="Texture" id=2]
+[ext_resource path="res://objs/white_tile.tscn" type="PackedScene" id=3]
+[ext_resource path="res://objs/white_tile.gd" type="Script" id=4]
+[ext_resource path="res://objs/black_tile.tscn" type="PackedScene" id=5]
+[ext_resource path="res://objs/black_tile.gd" type="Script" id=6]
+[ext_resource path="res://objs/GUI.tscn" type="PackedScene" id=7]
+[ext_resource path="res://objs/Cat.tscn" type="PackedScene" id=8]
+[ext_resource path="res://objs/portal.tscn" type="PackedScene" id=9]
+
+[node name="Level3" type="Node"]
+
+editor/display_folded = true
+
+[node name="TileSpawner" type="Node2D" parent="." index="0"]
+
+editor/display_folded = true
+script = ExtResource( 1 )
+__meta__ = {
+"_editor_icon": ExtResource( 2 )
+}
+source_tilemap = NodePath("../TileMap")
+mapping = "res://addons/tile_spawner/tilemapping.json"
+clear_children_before_baking = true
+spawn_at_runtime = false
+target_node = "."
+grid_alignment = 0
+
+[node name="Root" type="StaticBody2D" parent="TileSpawner" index="0" instance=ExtResource( 3 )]
+
+position = Vector2( 224, 96 )
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+script = ExtResource( 4 )
+
+[node name="Root2" type="StaticBody2D" parent="TileSpawner" index="1" instance=ExtResource( 3 )]
+
+position = Vector2( 288, 96 )
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+script = ExtResource( 4 )
+
+[node name="Root3" type="StaticBody2D" parent="TileSpawner" index="2" instance=ExtResource( 3 )]
+
+position = Vector2( 352, 96 )
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+script = ExtResource( 4 )
+
+[node name="Root4" type="StaticBody2D" parent="TileSpawner" index="3" instance=ExtResource( 3 )]
+
+position = Vector2( 416, 96 )
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+script = ExtResource( 4 )
+
+[node name="Root5" type="StaticBody2D" parent="TileSpawner" index="4" instance=ExtResource( 3 )]
+
+position = Vector2( 480, 96 )
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+script = ExtResource( 4 )
+
+[node name="Root6" type="StaticBody2D" parent="TileSpawner" index="5" instance=ExtResource( 3 )]
+
+position = Vector2( 544, 96 )
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+script = ExtResource( 4 )
+
+[node name="Root7" type="StaticBody2D" parent="TileSpawner" index="6" instance=ExtResource( 3 )]
+
+position = Vector2( 608, 96 )
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+script = ExtResource( 4 )
+
+[node name="Root8" type="StaticBody2D" parent="TileSpawner" index="7" instance=ExtResource( 3 )]
+
+position = Vector2( 672, 96 )
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+script = ExtResource( 4 )
+
+[node name="Root9" type="StaticBody2D" parent="TileSpawner" index="8" instance=ExtResource( 3 )]
+
+position = Vector2( 736, 96 )
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+script = ExtResource( 4 )
+
+[node name="Root10" type="StaticBody2D" parent="TileSpawner" index="9" instance=ExtResource( 3 )]
+
+position = Vector2( 800, 96 )
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+script = ExtResource( 4 )
+
+[node name="Root11" type="StaticBody2D" parent="TileSpawner" index="10" instance=ExtResource( 3 )]
+
+position = Vector2( 224, 160 )
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+script = ExtResource( 4 )
+
+[node name="Root12" type="StaticBody2D" parent="TileSpawner" index="11" instance=ExtResource( 5 )]
+
+position = Vector2( 288, 160 )
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+script = ExtResource( 6 )
+
+[node name="Root13" type="StaticBody2D" parent="TileSpawner" index="12" instance=ExtResource( 5 )]
+
+position = Vector2( 352, 160 )
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+script = ExtResource( 6 )
+
+[node name="Root14" type="StaticBody2D" parent="TileSpawner" index="13" instance=ExtResource( 5 )]
+
+position = Vector2( 416, 160 )
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+script = ExtResource( 6 )
+
+[node name="Root15" type="StaticBody2D" parent="TileSpawner" index="14" instance=ExtResource( 5 )]
+
+position = Vector2( 480, 160 )
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+script = ExtResource( 6 )
+
+[node name="Root16" type="StaticBody2D" parent="TileSpawner" index="15" instance=ExtResource( 5 )]
+
+position = Vector2( 544, 160 )
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+script = ExtResource( 6 )
+
+[node name="Root17" type="StaticBody2D" parent="TileSpawner" index="16" instance=ExtResource( 5 )]
+
+position = Vector2( 608, 160 )
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+script = ExtResource( 6 )
+
+[node name="Root18" type="StaticBody2D" parent="TileSpawner" index="17" instance=ExtResource( 5 )]
+
+position = Vector2( 672, 160 )
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+script = ExtResource( 6 )
+
+[node name="Root19" type="StaticBody2D" parent="TileSpawner" index="18" instance=ExtResource( 5 )]
+
+position = Vector2( 736, 160 )
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+script = ExtResource( 6 )
+
+[node name="Root20" type="StaticBody2D" parent="TileSpawner" index="19" instance=ExtResource( 3 )]
+
+position = Vector2( 800, 160 )
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+script = ExtResource( 4 )
+
+[node name="Root21" type="StaticBody2D" parent="TileSpawner" index="20" instance=ExtResource( 3 )]
+
+position = Vector2( 224, 224 )
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+script = ExtResource( 4 )
+
+[node name="Root22" type="StaticBody2D" parent="TileSpawner" index="21" instance=ExtResource( 5 )]
+
+position = Vector2( 288, 224 )
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+script = ExtResource( 6 )
+
+[node name="Root23" type="StaticBody2D" parent="TileSpawner" index="22" instance=ExtResource( 5 )]
+
+position = Vector2( 352, 224 )
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+script = ExtResource( 6 )
+
+[node name="Root24" type="StaticBody2D" parent="TileSpawner" index="23" instance=ExtResource( 5 )]
+
+position = Vector2( 416, 224 )
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+script = ExtResource( 6 )
+
+[node name="Root25" type="StaticBody2D" parent="TileSpawner" index="24" instance=ExtResource( 5 )]
+
+position = Vector2( 480, 224 )
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+script = ExtResource( 6 )
+
+[node name="Root26" type="StaticBody2D" parent="TileSpawner" index="25" instance=ExtResource( 5 )]
+
+position = Vector2( 544, 224 )
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+script = ExtResource( 6 )
+
+[node name="Root27" type="StaticBody2D" parent="TileSpawner" index="26" instance=ExtResource( 5 )]
+
+position = Vector2( 608, 224 )
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+script = ExtResource( 6 )
+
+[node name="Root28" type="StaticBody2D" parent="TileSpawner" index="27" instance=ExtResource( 5 )]
+
+position = Vector2( 672, 224 )
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+script = ExtResource( 6 )
+
+[node name="Root29" type="StaticBody2D" parent="TileSpawner" index="28" instance=ExtResource( 5 )]
+
+position = Vector2( 736, 224 )
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+script = ExtResource( 6 )
+
+[node name="Root30" type="StaticBody2D" parent="TileSpawner" index="29" instance=ExtResource( 3 )]
+
+position = Vector2( 800, 224 )
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+script = ExtResource( 4 )
+
+[node name="Root31" type="StaticBody2D" parent="TileSpawner" index="30" instance=ExtResource( 3 )]
+
+position = Vector2( 224, 288 )
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+script = ExtResource( 4 )
+
+[node name="Root32" type="StaticBody2D" parent="TileSpawner" index="31" instance=ExtResource( 5 )]
+
+position = Vector2( 288, 288 )
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+script = ExtResource( 6 )
+
+[node name="Root33" type="StaticBody2D" parent="TileSpawner" index="32" instance=ExtResource( 5 )]
+
+position = Vector2( 352, 288 )
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+script = ExtResource( 6 )
+
+[node name="Root34" type="StaticBody2D" parent="TileSpawner" index="33" instance=ExtResource( 3 )]
+
+position = Vector2( 416, 288 )
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+script = ExtResource( 4 )
+
+[node name="Root35" type="StaticBody2D" parent="TileSpawner" index="34" instance=ExtResource( 3 )]
+
+position = Vector2( 480, 288 )
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+script = ExtResource( 4 )
+
+[node name="Root36" type="StaticBody2D" parent="TileSpawner" index="35" instance=ExtResource( 3 )]
+
+position = Vector2( 544, 288 )
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+script = ExtResource( 4 )
+
+[node name="Root37" type="StaticBody2D" parent="TileSpawner" index="36" instance=ExtResource( 3 )]
+
+position = Vector2( 608, 288 )
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+script = ExtResource( 4 )
+
+[node name="Root38" type="StaticBody2D" parent="TileSpawner" index="37" instance=ExtResource( 5 )]
+
+position = Vector2( 672, 288 )
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+script = ExtResource( 6 )
+
+[node name="Root39" type="StaticBody2D" parent="TileSpawner" index="38" instance=ExtResource( 5 )]
+
+position = Vector2( 736, 288 )
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+script = ExtResource( 6 )
+
+[node name="Root40" type="StaticBody2D" parent="TileSpawner" index="39" instance=ExtResource( 3 )]
+
+position = Vector2( 800, 288 )
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+script = ExtResource( 4 )
+
+[node name="Root41" type="StaticBody2D" parent="TileSpawner" index="40" instance=ExtResource( 3 )]
+
+position = Vector2( 224, 352 )
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+script = ExtResource( 4 )
+
+[node name="Root42" type="StaticBody2D" parent="TileSpawner" index="41" instance=ExtResource( 5 )]
+
+position = Vector2( 288, 352 )
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+script = ExtResource( 6 )
+
+[node name="Root43" type="StaticBody2D" parent="TileSpawner" index="42" instance=ExtResource( 5 )]
+
+position = Vector2( 352, 352 )
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+script = ExtResource( 6 )
+
+[node name="Root44" type="StaticBody2D" parent="TileSpawner" index="43" instance=ExtResource( 3 )]
+
+position = Vector2( 416, 352 )
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+script = ExtResource( 4 )
+
+[node name="Root45" type="StaticBody2D" parent="TileSpawner" index="44" instance=ExtResource( 3 )]
+
+position = Vector2( 608, 352 )
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+script = ExtResource( 4 )
+
+[node name="Root46" type="StaticBody2D" parent="TileSpawner" index="45" instance=ExtResource( 5 )]
+
+position = Vector2( 672, 352 )
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+script = ExtResource( 6 )
+
+[node name="Root47" type="StaticBody2D" parent="TileSpawner" index="46" instance=ExtResource( 5 )]
+
+position = Vector2( 736, 352 )
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+script = ExtResource( 6 )
+
+[node name="Root48" type="StaticBody2D" parent="TileSpawner" index="47" instance=ExtResource( 3 )]
+
+position = Vector2( 800, 352 )
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+script = ExtResource( 4 )
+
+[node name="Root49" type="StaticBody2D" parent="TileSpawner" index="48" instance=ExtResource( 3 )]
+
+position = Vector2( 224, 416 )
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+script = ExtResource( 4 )
+
+[node name="Root50" type="StaticBody2D" parent="TileSpawner" index="49" instance=ExtResource( 5 )]
+
+position = Vector2( 288, 416 )
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+script = ExtResource( 6 )
+
+[node name="Root51" type="StaticBody2D" parent="TileSpawner" index="50" instance=ExtResource( 5 )]
+
+position = Vector2( 352, 416 )
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+script = ExtResource( 6 )
+
+[node name="Root52" type="StaticBody2D" parent="TileSpawner" index="51" instance=ExtResource( 3 )]
+
+position = Vector2( 416, 416 )
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+script = ExtResource( 4 )
+
+[node name="Root53" type="StaticBody2D" parent="TileSpawner" index="52" instance=ExtResource( 3 )]
+
+position = Vector2( 608, 416 )
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+script = ExtResource( 4 )
+
+[node name="Root54" type="StaticBody2D" parent="TileSpawner" index="53" instance=ExtResource( 5 )]
+
+position = Vector2( 672, 416 )
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+script = ExtResource( 6 )
+
+[node name="Root55" type="StaticBody2D" parent="TileSpawner" index="54" instance=ExtResource( 5 )]
+
+position = Vector2( 736, 416 )
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+script = ExtResource( 6 )
+
+[node name="Root56" type="StaticBody2D" parent="TileSpawner" index="55" instance=ExtResource( 3 )]
+
+position = Vector2( 800, 416 )
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+script = ExtResource( 4 )
+
+[node name="Root57" type="StaticBody2D" parent="TileSpawner" index="56" instance=ExtResource( 3 )]
+
+position = Vector2( 224, 480 )
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+script = ExtResource( 4 )
+
+[node name="Root58" type="StaticBody2D" parent="TileSpawner" index="57" instance=ExtResource( 5 )]
+
+position = Vector2( 288, 480 )
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+script = ExtResource( 6 )
+
+[node name="Root59" type="StaticBody2D" parent="TileSpawner" index="58" instance=ExtResource( 5 )]
+
+position = Vector2( 352, 480 )
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+script = ExtResource( 6 )
+
+[node name="Root60" type="StaticBody2D" parent="TileSpawner" index="59" instance=ExtResource( 3 )]
+
+position = Vector2( 416, 480 )
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+script = ExtResource( 4 )
+
+[node name="Root61" type="StaticBody2D" parent="TileSpawner" index="60" instance=ExtResource( 3 )]
+
+position = Vector2( 480, 480 )
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+script = ExtResource( 4 )
+
+[node name="Root62" type="StaticBody2D" parent="TileSpawner" index="61" instance=ExtResource( 3 )]
+
+position = Vector2( 544, 480 )
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+script = ExtResource( 4 )
+
+[node name="Root63" type="StaticBody2D" parent="TileSpawner" index="62" instance=ExtResource( 3 )]
+
+position = Vector2( 608, 480 )
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+script = ExtResource( 4 )
+
+[node name="Root64" type="StaticBody2D" parent="TileSpawner" index="63" instance=ExtResource( 5 )]
+
+position = Vector2( 672, 480 )
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+script = ExtResource( 6 )
+
+[node name="Root65" type="StaticBody2D" parent="TileSpawner" index="64" instance=ExtResource( 5 )]
+
+position = Vector2( 736, 480 )
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+script = ExtResource( 6 )
+
+[node name="Root66" type="StaticBody2D" parent="TileSpawner" index="65" instance=ExtResource( 3 )]
+
+position = Vector2( 800, 480 )
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+script = ExtResource( 4 )
+
+[node name="Root67" type="StaticBody2D" parent="TileSpawner" index="66" instance=ExtResource( 3 )]
+
+position = Vector2( 224, 544 )
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+script = ExtResource( 4 )
+
+[node name="Root68" type="StaticBody2D" parent="TileSpawner" index="67" instance=ExtResource( 5 )]
+
+position = Vector2( 288, 544 )
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+script = ExtResource( 6 )
+
+[node name="Root69" type="StaticBody2D" parent="TileSpawner" index="68" instance=ExtResource( 5 )]
+
+position = Vector2( 352, 544 )
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+script = ExtResource( 6 )
+
+[node name="Root70" type="StaticBody2D" parent="TileSpawner" index="69" instance=ExtResource( 5 )]
+
+position = Vector2( 416, 544 )
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+script = ExtResource( 6 )
+
+[node name="Root71" type="StaticBody2D" parent="TileSpawner" index="70" instance=ExtResource( 5 )]
+
+position = Vector2( 480, 544 )
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+script = ExtResource( 6 )
+
+[node name="Root72" type="StaticBody2D" parent="TileSpawner" index="71" instance=ExtResource( 5 )]
+
+position = Vector2( 544, 544 )
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+script = ExtResource( 6 )
+
+[node name="Root73" type="StaticBody2D" parent="TileSpawner" index="72" instance=ExtResource( 5 )]
+
+position = Vector2( 608, 544 )
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+script = ExtResource( 6 )
+
+[node name="Root74" type="StaticBody2D" parent="TileSpawner" index="73" instance=ExtResource( 5 )]
+
+position = Vector2( 672, 544 )
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+script = ExtResource( 6 )
+
+[node name="Root75" type="StaticBody2D" parent="TileSpawner" index="74" instance=ExtResource( 5 )]
+
+position = Vector2( 736, 544 )
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+script = ExtResource( 6 )
+
+[node name="Root76" type="StaticBody2D" parent="TileSpawner" index="75" instance=ExtResource( 3 )]
+
+position = Vector2( 800, 544 )
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+script = ExtResource( 4 )
+
+[node name="Root77" type="StaticBody2D" parent="TileSpawner" index="76" instance=ExtResource( 3 )]
+
+position = Vector2( 416, 608 )
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+script = ExtResource( 4 )
+
+[node name="Root78" type="StaticBody2D" parent="TileSpawner" index="77" instance=ExtResource( 3 )]
+
+position = Vector2( 480, 608 )
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+script = ExtResource( 4 )
+
+[node name="Root79" type="StaticBody2D" parent="TileSpawner" index="78" instance=ExtResource( 3 )]
+
+position = Vector2( 544, 608 )
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+script = ExtResource( 4 )
+
+[node name="Root80" type="StaticBody2D" parent="TileSpawner" index="79" instance=ExtResource( 3 )]
+
+position = Vector2( 608, 608 )
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+script = ExtResource( 4 )
+
+[node name="Root81" type="StaticBody2D" parent="TileSpawner" index="80" instance=ExtResource( 3 )]
+
+position = Vector2( 672, 608 )
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+script = ExtResource( 4 )
+
+[node name="Root82" type="StaticBody2D" parent="TileSpawner" index="81" instance=ExtResource( 3 )]
+
+position = Vector2( 736, 608 )
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+script = ExtResource( 4 )
+
+[node name="Root83" type="StaticBody2D" parent="TileSpawner" index="82" instance=ExtResource( 3 )]
+
+position = Vector2( 800, 608 )
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+script = ExtResource( 4 )
+
+[node name="Root84" type="StaticBody2D" parent="TileSpawner" index="83" instance=ExtResource( 3 )]
+
+position = Vector2( 416, 672 )
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+script = ExtResource( 4 )
+
+[node name="Root85" type="StaticBody2D" parent="TileSpawner" index="84" instance=ExtResource( 3 )]
+
+position = Vector2( 160, 736 )
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+script = ExtResource( 4 )
+
+[node name="Root86" type="StaticBody2D" parent="TileSpawner" index="85" instance=ExtResource( 3 )]
+
+position = Vector2( 224, 736 )
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+script = ExtResource( 4 )
+
+[node name="Root87" type="StaticBody2D" parent="TileSpawner" index="86" instance=ExtResource( 3 )]
+
+position = Vector2( 288, 736 )
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+script = ExtResource( 4 )
+
+[node name="Root88" type="StaticBody2D" parent="TileSpawner" index="87" instance=ExtResource( 3 )]
+
+position = Vector2( 352, 736 )
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+script = ExtResource( 4 )
+
+[node name="Root89" type="StaticBody2D" parent="TileSpawner" index="88" instance=ExtResource( 3 )]
+
+position = Vector2( 416, 736 )
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+script = ExtResource( 4 )
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." index="1"]
+
+editor/display_folded = true
+layer = 1
+offset = Vector2( 0, 0 )
+rotation = 0.0
+scale = Vector2( 1, 1 )
+transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+
+[node name="GUI" parent="CanvasLayer" index="0" instance=ExtResource( 7 )]
+
+[node name="Cat" parent="." index="2" instance=ExtResource( 8 )]
+
+position = Vector2( 509.263, 384.783 )
+
+[node name="Area2D" parent="." index="3" instance=ExtResource( 9 )]
+
+position = Vector2( 154.215, 619.177 )
+
+
