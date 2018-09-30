@@ -37,7 +37,7 @@ func _ready():
 	active_cat_sprite.show()
 	inactive_cat_sprite.hide()
 	_on_Cat_switchCat(true)
-	emit_signal("floatCat", false)
+	emit_signal("floatCat")
 
 func horizontal_physics():
 	if right_pressed:
@@ -74,7 +74,7 @@ func cat_speak(text):
 func toggle_cat_state():
 	if switch_count != 0:
 		# Check for overlap with tiles
-		for tile_node in get_parent().current_level_tile_list:
+		for tile_node in get_tree().get_root().get_node("Main").current_level_tile_list:
 			var distance_from_tile = tile_node.global_position.distance_to(self.global_position)
 			if distance_from_tile < 50:
 				cat_speak("Can't switch states inside a block")
@@ -136,14 +136,15 @@ func _physics_process(delta):
 		i -= 1
 
 func _on_Cat_switchCat(default = false):
+	var arr = get_node("/root/").get_children()
+	for i in arr:
+		print(i.get_name())
+
 	if default == false:
 		switch_count -= 1
-<<<<<<< HEAD
-#	get_node("/root/Main/Level0/CanvasLayer/GUI/MainBar/TransformBar/Background/TransformCount").adjust(switch_count, cat_state)
-=======
-	get_node("/root/Main/" + get_node("/root/Main").get_child(0).get_name() + "/CanvasLayer/GUI/MainBar/TransformBar/Background/TransformCount").adjust(switch_count, cat_state)
+#	get_node("/root/Main/" + get_node("/root/Main").get_child(1).get_name() + "/CanvasLayer/GUI/MainBar/TransformBar/Background/TransformCount").adjust(switch_count, cat_state)
 
 
 func _on_Cat_floatCat():
-	get_node("/root/Main/" + get_node("/root/Main").get_child(0).get_name() + "/CanvasLayer/GUI/MainBar/FloatBar/FloatCounter/Background/FloatCount").adjust(float_triggered)
->>>>>>> e84523ee3acd525d3597346f51dcace7352d053e
+	print(get_node("/root/Main").get_child(0).get_name())
+#	get_node("/root/Main/" + get_node("/root/Main").get_child(1).get_name() + "/CanvasLayer/GUI/MainBar/FloatBar/FloatCounter/Background/FloatCount").adjust(float_triggered)

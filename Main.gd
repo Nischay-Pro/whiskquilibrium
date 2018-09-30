@@ -1,15 +1,10 @@
 extends Node
-<<<<<<< HEAD
-=======
-
-var current_level_scene
-var current_level_node
-var current_level_tile_list
->>>>>>> e84523ee3acd525d3597346f51dcace7352d053e
 const cat_scene = preload("res://objs/Cat.tscn")
 
 var curr_level = -1
 var curr_lvl_obj
+var current_level_tile_list
+
 var cat
 var start_pos = Vector2(0,0)
 
@@ -21,7 +16,13 @@ func init_cat():
 func init_level(curr_level_scene):
 	curr_lvl_obj = curr_level_scene.instance()
 	add_child(curr_lvl_obj)
-	cat.position = start_pos
+#	cat.position = start_pos
+	current_level_tile_list = curr_lvl_obj.get_node("TileSpawner").get_children()
+	var temp_list = []
+	for X in current_level_tile_list:
+		if X.get_class() != "Sprite":
+			temp_list.append(X)
+	current_level_tile_list = temp_list
 
 func load_level():
 	var level = get_node("level_test")
@@ -32,28 +33,21 @@ func load_level():
 	level.queue_free()
 	var level_num = curr_level + 1
 	if level_num == 0:
-		start_pos = Vector2(256,200)
-<<<<<<< HEAD
 		init_level(preload("res://levels/level0.tscn"))
+#	if level_num == 1:
+#		init_level(preload("res://levels/level1.tscn"))
+	if level_num == 2:
+		init_level(preload("res://levels/level2.tscn"))
 
-=======
-	current_level_node = current_level_scene.instance()
-	current_level_tile_list = current_level_node.get_node("TileSpawner").get_children()
-	var temp_list = []
-	for X in current_level_tile_list:
-		if X.get_class() != "Sprite":
-			temp_list.append(X)
-	current_level_tile_list = temp_list
-	add_child(current_level_node)
->>>>>>> e84523ee3acd525d3597346f51dcace7352d053e
 
 func _ready():
-	# start with level_test
-	var curr_level_scene = preload("res://levels/level_test.tscn")
-	curr_lvl_obj = curr_level_scene.instance()
-	add_child(curr_lvl_obj)
-	init_cat()
+#	init_cat()
+	var curr_level_scene = preload("res://levels/level0.tscn")
+	init_level(curr_level_scene)
+#	curr_lvl_obj = curr_level_scene.instance()
+#	add_child(curr_lvl_obj)
+
 
 func _process(delta):
-	if cat.position.y > get_viewport().get_visible_rect().end.y:
+	if curr_lvl_obj.get_node("Cat").position.y > get_viewport().get_visible_rect().end.y:
 		get_tree().reload_current_scene()

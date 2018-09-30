@@ -9,7 +9,7 @@ var cat_node = null
 func _ready():
 	get_node("WhiteSprite").show()
 	get_node("BlackSprite").hide()
-	cat_node = get_tree().get_root().get_node("Main").get_node("Cat")
+	cat_node = get_parent().get_parent().get_node("Cat")
 	
 func flip_color():
 	if tile_state == BLACK:

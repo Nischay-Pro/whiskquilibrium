@@ -1,17 +1,18 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://levels/Area2D.gd" type="Script" id=1]
 [ext_resource path="res://icon.png" type="Texture" id=2]
 [ext_resource path="res://addons/tile_spawner/tile_spawner.gd" type="Script" id=3]
 [ext_resource path="res://addons/tile_spawner/tile_spawner_icon.png" type="Texture" id=4]
 [ext_resource path="res://objs/grey_tile.tscn" type="PackedScene" id=5]
+[ext_resource path="res://objs/GUI.tscn" type="PackedScene" id=6]
 
 [sub_resource type="RectangleShape2D" id=1]
 
 custom_solver_bias = 0.0
 extents = Vector2( 500, 500 )
 
-[node name="level_test" type="Node" index="0"]
+[node name="level_test" type="Node"]
 
 [node name="Area2D" type="Area2D" parent="." index="0"]
 
@@ -117,5 +118,15 @@ position = Vector2( 480, 672 )
 [node name="Sprite17" parent="TileSpawner" index="16" instance=ExtResource( 5 )]
 
 position = Vector2( 544, 672 )
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." index="2"]
+
+layer = 1
+offset = Vector2( 0, 0 )
+rotation = 0.0
+scale = Vector2( 1, 1 )
+transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+
+[node name="GUI" parent="CanvasLayer" index="0" instance=ExtResource( 6 )]
 
 
