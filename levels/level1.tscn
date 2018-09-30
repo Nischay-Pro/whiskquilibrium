@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://addons/tile_spawner/tile_spawner.gd" type="Script" id=1]
 [ext_resource path="res://addons/tile_spawner/tile_spawner_icon.png" type="Texture" id=2]
@@ -6,6 +6,7 @@
 [ext_resource path="res://objs/white_tile.tscn" type="PackedScene" id=4]
 [ext_resource path="res://objs/black_tile.tscn" type="PackedScene" id=5]
 [ext_resource path="res://objs/GUI.tscn" type="PackedScene" id=6]
+[ext_resource path="res://objs/Cat.tscn" type="PackedScene" id=7]
 
 [node name="Level0" type="Node"]
 
@@ -352,5 +353,9 @@ scale = Vector2( 1, 1 )
 transform = Transform2D( 1, 0, 0, 1, 0, 0 )
 
 [node name="GUI" parent="CanvasLayer" index="0" instance=ExtResource( 6 )]
+
+[node name="Cat" parent="." index="2" instance=ExtResource( 7 )]
+
+position = Vector2( 89.2643, 198.055 )
 
 
