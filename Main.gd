@@ -29,10 +29,10 @@ func load_level():
 	var level_num = curr_level
 	if level_num == 0:
 		init_level(preload("res://levels/level0.tscn"))
-	if level_num == 1:
-		init_level(preload("res://levels/level1.tscn"))
-	if level_num == 2:
-		init_level(preload("res://levels/level2.tscn"))
+#	if level_num == 1:
+#		init_level(preload("res://levels/level1.tscn"))
+#	if level_num == 2:
+#		init_level(preload("res://levels/level2.tscn"))
 
 
 func _ready():
