@@ -10,6 +10,7 @@ const JUMP_HEIGHT = -500
 const BLACK_CAT = 0
 const WHITE_CAT = 1
 
+# Cat state
 var cat_state = BLACK_CAT
 var anim = "idle"
 
@@ -23,11 +24,12 @@ var switch_count = 20
 signal switchCat
 var switch_words = ["Kill me senpai", "I can't switch bitch!", "Nada", "Nope!", "Uh Huh"]
 
-
 # Input booleans
 var right_pressed = false
 var left_pressed = false
 var jump_pressed = false
+
+var colliders = []
 
 var motion = Vector2()
 
@@ -120,7 +122,17 @@ func _physics_process(delta):
 	elif cat_state == WHITE_CAT:
 		white_cat_physics()
 	horizontal_physics()
-	motion = move_and_slide(motion, UP)			
+	motion = move_and_slide(motion, UP)
+	for i in range(get_slide_count()):
+		var current_collider = get_slide_collision(i).collider
+		if current_collider.get_parent().get_class() != "Sprite":
+			colliders.append(current_collider)
+	var i = len(colliders) - 1
+	while i >= 0:
+		if colliders[i].global_position.distance_to(global_position) > 85:
+			colliders[i].flip_color()
+			colliders.remove(i)
+		i -= 1
 
 func _on_Cat_switchCat(default = false):
 	if default == false:
