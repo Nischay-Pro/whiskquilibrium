@@ -5,7 +5,7 @@ onready var inactive_cat_sprite = get_node("whitecat_sprite")
 
 const UP = Vector2(0, -1)
 const GRAVITY  = 20
-const MOV_MOTION = 500
+const MOV_MOTION = 400
 const JUMP_HEIGHT = -500
 const BLACK_CAT = 0
 const WHITE_CAT = 1
@@ -135,7 +135,8 @@ func _physics_process(delta):
 	for i in range(get_slide_count()):
 		var current_collider = get_slide_collision(i).collider
 		if current_collider.get_parent().get_class() != "Sprite":
-			colliders.append(current_collider)
+			if not colliders.has(current_collider):
+				colliders.append(current_collider)
 	var i = len(colliders) - 1
 	while i >= 0:
 		if colliders[i].global_position.distance_to(global_position) > 85:
